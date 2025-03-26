@@ -277,17 +277,9 @@ if (isset($_GET['od_id'])) {
             $qty_item = $i_price['qty'];
             $subtotal_item = $harga * $i_price['qty'];
 
-            // // Query untuk mengambil item_name dari tabel items
-            // $item_name_query = $conn->query('SELECT item_name FROM items WHERE item_id = "' . $item_id . '"');
-            // $item_name = $item_name_query->fetch(PDO::FETCH_ASSOC)['item_name'];
-            // $item_names[] = $item_name; // tambahkan item name ke array
-
-            // // gunakan implode() untuk menggabungkan item name dengan koma
-            // $item_name_string = implode(', ', $item_names);
-
             // Query menambah orderan
             $insert_temp = 'INSERT INTO order_items (order_id, username, ip_add, item_id, qty, subtotal) 
-                            SELECT o.order_id, "' . $username . '", "' . $ip . '", "' . $item_id . '", "' . $i_price['qty'] . '", "' . $subtotal_item . '" 
+                            SELECT o.order_id, "' . $username . '", "' . $ip . '", "' . $item_id . '", "' . $qty_item . '", "' . $subtotal_item . '" 
                             FROM orders o 
                             WHERE o.order_id = "' . $or_id . '"';
             $conn->exec($insert_temp);

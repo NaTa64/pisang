@@ -156,9 +156,9 @@ include "../koneksi/koneksi.php";
       <h2 class="page-header">Pesanan</h2>
       <hr>
 
-      <div class="row-search">
+      <!-- <div class="row-search">
         <a href="tambahpeminjaman.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Peminjaman</a>
-      </div>
+      </div> -->
 
       <table id="tabelpesanan" class="table table-bordered table-hover">
         <thead>
@@ -178,27 +178,6 @@ include "../koneksi/koneksi.php";
         </thead>
 
         <?php
-        // $query = "SELECT orders.order_id, orders.name, orders.alamat, orders.phone, orders.jumlah, order_items.i_id, items.item_name, items.harga
-        //   as jumlah
-        //   FROM orders 
-        //   JOIN order_items 
-        //   ON orders.order_id = order_items.cust_id
-        //   JOIN items 
-        //   ON order_items.i_id = items.item_id";
-
-        // $query = "SELECT 
-        // orders.order_id,
-        // orders.order_amount,
-        // orders.name,
-        // orders.alamat,
-        // orders.phone,
-        // orders.status,
-        // GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk, 
-        // GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
-        // from orders
-        // JOIN order_items ON orders.order_id = order_items.id
-        // JOIN items ON order_items.id = items.item_id
-        // GROUP BY orders.order_id";
 
         $query = "SELECT 
         orders.order_id,
@@ -269,10 +248,11 @@ include "../koneksi/koneksi.php";
 
               <td>
                 <div class="btn-group">
-                  <a href="editpeminjaman.php?id_peminjaman=<?php echo $lihat['order_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
-                  <a href="hapuspeminjaman.php?id=<?php echo $lihat['order_id']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                  <a href="pesanan_edit.php?order_id=<?php echo $lihat['order_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                  <!-- <a href="hapuspeminjaman.php?id=<?php echo $lihat['order_id']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a> -->
                 </div>
               </td>
+              
             </tr>
             <?php $no++; ?>
           <?php

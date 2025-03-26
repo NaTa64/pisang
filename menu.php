@@ -78,7 +78,6 @@ if (!isset($_SESSION['username'])) {
         <?php
         $stmt = $conn->query('select item_id,item_name,harga,stok,item_image from items where aktif=1'); //Query to select sire, dam and horse name from the horse table with the associated connection.	
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
         ?>
           <div class="col-sm-4">
             <div class="panel panel-primary" style="border-radius:0px;">

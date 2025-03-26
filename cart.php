@@ -244,10 +244,6 @@ if (!isset($_SESSION['username'])) {
 
                             <!-- /.box -->
 
-
-
-
-
                         </div>
                         <!-- /.col-md-9 -->
 
@@ -292,8 +288,6 @@ if (!isset($_SESSION['username'])) {
                                 </div>
 
                             </div>
-
-
 
                         </div>
                         <!-- /.col-md-3 -->
