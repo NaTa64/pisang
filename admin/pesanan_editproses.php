@@ -11,7 +11,7 @@ if ($status == "Telah Selesai") {
     $aktif = 1;
 }
 
-$ubah_status = "UPDATE orders set status = '$status', aktif = '$aktif' WHERE order_id ='$order_id'";
+$ubah_status = "UPDATE orders set status = '$status', aktif = '$aktif', tanggal_selesai = " . ($status == "Telah Selesai" ? "NOW()" : "NULL") . " WHERE order_id ='$order_id'";
 
 if ($conn->query($ubah_status)) {
     // Jika query berhasil dijalankan, maka header akan dikirimkan

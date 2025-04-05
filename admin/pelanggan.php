@@ -20,7 +20,7 @@ include "../koneksi/koneksi.php";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
-  <title>Web Pemimjaman Jurusan TI</title>
+  <title>Web Penjualan</title>
   <style>
     /* Style the sidebar */
     /* Sidebar */
@@ -115,11 +115,11 @@ include "../koneksi/koneksi.php";
 
 <body>
   <div class="sidebar">
-    <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+  <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
-    <a href="#"><i class="fas fa-users"></i> Pelanggan</a>
+    <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
     <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
-    <!-- <a href="pengembalian.php"><i class="fas fa-undo"></i> Pengembalian</a> -->
+    <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
     <div style="flex-grow: 1;"></div>
     <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </div>
@@ -139,13 +139,6 @@ include "../koneksi/koneksi.php";
             <th>No</th>
             <th>Kode</th>
             <th>Username</th>
-            <!-- <th>Nim</th> -->
-            <!-- <th>Jurusan</th> -->
-            <!-- <th>Kelas</th> -->
-            <!-- <th>Semester</th> -->
-            <!-- <th>Nomor HP</th> Menambahkan kolom untuk Nomor HP -->
-            <!-- <th>Opsi</th> -->
-            <!-- <th>Hapus</th> -->
           </tr>
         </thead>
 
@@ -160,10 +153,6 @@ include "../koneksi/koneksi.php";
               <td><?php echo $nomor; ?></td>
               <td><?php echo htmlspecialchars($lihat['cust_id']); ?></td>
               <td><?php echo htmlspecialchars($lihat['cust_dname']); ?></td>
-              <!-- <td><?php echo htmlspecialchars($lihat['nim']); ?></td> -->
-              <!-- <td><?php echo htmlspecialchars($lihat['jurusan']); ?></td> -->
-              <!-- <td><?php echo htmlspecialchars($lihat['no_kelas']); ?></td> -->
-              <!-- <td><?php echo htmlspecialchars($lihat['semester']); ?></td> -->
               <!-- <td>
                 <!-- Membuat nomor HP menjadi link WhatsApp dengan pesan otomatis -->
               <!-- <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', htmlspecialchars($lihat['no_hp'])); ?>?text=<?php echo urlencode('Terima Kasih Telah Melakukan Peminjaman Barang Di Jurusan Saya Harap Anda Dapat Mengembalikannya Sebelum Pukul 17:30 WITA TERIMA KASIH :) '); ?>" target="_blank" style="text-decoration: none">
