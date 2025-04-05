@@ -1,4 +1,4 @@
-<?PHP
+<?php
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
@@ -37,19 +37,16 @@ function cart()
 		$ip = getIp();
 		$itm_id = $_GET['itm_id'];
 		$cust_id = $_SESSION['cust_id'];
-		$username = $_SESSION['username'];
+
 		$check_itm =  'select * from cart where ip_add=? AND i_id= ?';
 		$stmt = $conn->prepare($check_itm);
 		$stmt->execute(array($ip, $itm_id));
 		$count = $stmt->rowCount();
+
 		if ($count > 0) {
 			echo "<Script>alert('Item sudah ada dikeranjang!')</script>";
 			echo "<script>window.open('menu.php','_self')</script>";
 		} else {
-			// $harga = $conn->query('SELECT harga FROM items WHERE item_id = "' . $itm_id . '"');
-			// $harga = $harga->fetch(PDO::FETCH_ASSOC)['harga'];
-			// $insert_temp = 'INSERT INTO order_items (cust_id, username, i_id, ip_add, qty, harga) VALUES ("' . $cust_id . '","' . $username . '","' . $itm_id . '","' . $ip . '","1","' . $harga . '")';
-			// $conn->exec($insert_temp);
 			$insert_itm = 'INSERT INTO cart (cust_id,i_id, ip_add, qty) VALUES ("' . $cust_id . '","' . $itm_id . '","' . $ip . '","1")';
 			$conn->exec($insert_itm);
 			echo "<Script>alert('Item ditambahkan ke keranjang!')</script>";
@@ -57,13 +54,6 @@ function cart()
 		}
 	}
 }
-
-// function kurangi_stok($item_id)
-// {
-// 	global $conn;
-// 	$stmt = $conn->prepare("UPDATE items SET stok = stok - 1 WHERE item_id = ?");
-// 	$stmt->execute([$item_id]);
-// }
 
 function total_items()
 {
@@ -177,9 +167,7 @@ function make_slide_indicators()
 	$result = make_query();
 	while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 		if ($count == 0) {
-			$output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="' . $count . '" class="active"></li>
-   ';
+			$output .= '<li data-target="#dynamic_slide_show" data-slide-to="' . $count . '" class="active"></li>';
 		} else {
 			$output .= '<li data-target="#dynamic_slide_show" data-slide-to="' . $count . '"></li>';
 		}
@@ -200,9 +188,7 @@ function make_slides()
 		} else {
 			$output .= '<div class="item">';
 		}
-		$output .= '
-   <img src="' . $row["banner_image"] . '" alt="' . $row["banner_title"] . '" style=" height:80%;" />
-  </div>';
+		$output .= '<img src="' . $row["banner_image"] . '" alt="' . $row["banner_title"] . '" style=" height:80%;" /></div>';
 		$count = $count + 1;
 	}
 	return $output;
@@ -237,3 +223,4 @@ function tooltip()
 	else
 		echo "Tekan untuk menambah";
 }
+

@@ -106,6 +106,7 @@ if (!$result) {
         <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
         <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
         <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
+        <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
     </div>
 
     <div class="content">

@@ -11,11 +11,10 @@ include "../koneksi/koneksi.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="../css/bootstrap.min1.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
@@ -156,11 +155,11 @@ include "../koneksi/koneksi.php";
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
     <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
     <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
-    <!-- <a href="pengembalian.php"><i class="fas fa-undo"></i> Pengembalian</a> -->
+    <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
     <div style="flex-grow: 1;"></div>
     <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </div>
@@ -194,21 +193,21 @@ include "../koneksi/koneksi.php";
 
           <!-- Pelanggan Terdaftar -->
           <!-- <div class="row"> -->
-            <div class="col-md-4">
-              <a href="pelanggan.php" class="card-link">
-                <div class="card-info">
-                  <i class="fas fa-users icon"></i>
-                  <h4>Pelanggan Terdaftar</h4>
-                  <div class="value">
-                    <?php
-                    $query_pelanggan = $conn->query("SELECT count(cust_id) as pelanggan FROM customers");
-                    $data_pelanggan = $query_pelanggan->fetch(PDO::FETCH_ASSOC);
-                    echo $data_pelanggan['pelanggan'];
-                    ?>
-                  </div>
+          <div class="col-md-4">
+            <a href="pelanggan.php" class="card-link">
+              <div class="card-info">
+                <i class="fas fa-users icon"></i>
+                <h4>Pelanggan Terdaftar</h4>
+                <div class="value">
+                  <?php
+                  $query_pelanggan = $conn->query("SELECT count(cust_id) as pelanggan FROM customers");
+                  $data_pelanggan = $query_pelanggan->fetch(PDO::FETCH_ASSOC);
+                  echo $data_pelanggan['pelanggan'];
+                  ?>
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
+          </div>
           <!-- </div> -->
 
           <!-- Jumlah Pesanan -->
@@ -229,21 +228,21 @@ include "../koneksi/koneksi.php";
           </div>
 
           <!-- Barang Dikembalikan -->
-          <!-- <div class="col-md-4">
-            <a href="pengembalian.php" class="card-link">
+          <div class="col-md-4">
+            <a href="riwayatpemesanan.php" class="card-link">
               <div class="card-info">
                 <i class="fas fa-undo icon"></i>
-                <h4>Barang Dikembalikan</h4>
+                <h4>Riwayat Pemesanan</h4>
                 <div class="value">
                   <?php
-                  // $query_pengembalian = $mysqli->query("SELECT count(id_brg) as returned FROM pengembalian");
-                  // $data_pengembalian = mysqli_fetch_assoc($query_pengembalian);
-                  // echo $data_pengembalian['returned'];
+                  $query_pemesanan = $conn->query("SELECT count(order_id) as pemesanan FROM orders");
+                  $data_pemesanan = $query_pemesanan->fetch(PDO::FETCH_ASSOC);
+                  echo $data_pemesanan['pemesanan'];
                   ?>
                 </div>
               </div>
             </a>
-          </div> -->
+          </div>
 
         </div>
       </div>

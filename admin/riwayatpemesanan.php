@@ -21,7 +21,7 @@ include "../koneksi/koneksi.php";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
-  <title>Web Peminjaman Jurusan TI</title>
+  <title>Web Penjualan</title>
   <style>
     .sidebar {
       height: 100%;
@@ -153,7 +153,7 @@ include "../koneksi/koneksi.php";
 
   <div class="content">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h2 class="page-header">Pesanan</h2>
+      <h2 class="page-header">Riwayat Pemesanan</h2>
       <hr>
 
       <!-- <div class="row-search">
@@ -172,7 +172,8 @@ include "../koneksi/koneksi.php";
             <th>Total</th>
             <th>Status</th>
             <th>Tanggal_Order</th>
-            <th>Opsi</th>
+            <th>Tanggal_Selesai</th>
+            <!-- <th>Opsi</th> -->
           </tr>
         </thead>
 
@@ -186,12 +187,12 @@ include "../koneksi/koneksi.php";
         orders.phone,
         orders.status,
         orders.tanggal_order,
+        orders.tanggal_selesai,
         GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk,
         GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
         from orders
         JOIN order_items ON orders.order_id = order_items.order_id
         JOIN items ON order_items.item_id = items.item_id
-        WHERE orders.aktif=1
         GROUP BY orders.order_id";
 
         $result = $conn->query($query);
@@ -247,11 +248,19 @@ include "../koneksi/koneksi.php";
               <td><?php echo $lihat['tanggal_order']; ?></td>
 
               <td>
+                <?php if (empty($lihat['tanggal_selesai'])) { ?>
+                  Belum Selesai
+                <?php } else { ?>
+                  <?php echo $lihat['tanggal_selesai']; ?>
+                <?php } ?>
+              </td>
+
+              <!-- <td>
                 <div class="btn-group">
                   <a href="pesanan_edit.php?order_id=<?php echo $lihat['order_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
-                  <!-- <a href="hapuspeminjaman.php?id=<?php echo $lihat['order_id']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a> -->
+                  <a href="hapuspeminjaman.php?id=<?php echo $lihat['order_id']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
                 </div>
-              </td>
+              </td> -->
 
             </tr>
             <?php $no++; ?>

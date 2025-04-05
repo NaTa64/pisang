@@ -150,10 +150,10 @@ include "../koneksi/koneksi.php";
 <body>
   <div class="sidebar">
     <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-    <a href="#"><i class="fas fa-box"></i> Produk</a>
+    <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
     <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
     <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
-    <!-- <a href="pengembalian.php"><i class="fas fa-undo"></i> Pengembalian</a> -->
+    <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
     <div style="flex-grow: 1;"></div>
     <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </div>
@@ -163,7 +163,7 @@ include "../koneksi/koneksi.php";
       <h2 class="page-header">Data Produk</h2>
       <hr>
 
-      <div class="row-search" >
+      <div class="row-search">
         <a href="tambahproduk.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Produk</a>
       </div>
 
@@ -180,7 +180,7 @@ include "../koneksi/koneksi.php";
                 <h5 class="card-title"><?php echo $lihat['item_name']; ?></h5>
 
                 <p class="card-text">Harga: <?php echo $lihat['harga']; ?></p>
-                
+
                 <p class="card-text">Stok: <?php echo $lihat['stok']; ?></p>
 
                 <div class="text-center">
