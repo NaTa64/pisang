@@ -53,10 +53,10 @@ update();
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="home.php">Home</a></li>
-                    <li><a href="menu.php">Food Menu</a></li>
-                    <li><a href="stores.php">Stores</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="menu.php">Menu Makanan</a></li>
+                    <li><a href="contact.php">Kontak</a></li>
+                    <li><a href="history.php">Riwayat Pemesanan</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li style="top:7px;">
@@ -252,7 +252,7 @@ update();
 if (isset($_GET['od_id'])) {
     $username = $_SESSION['username'];
     $cust_id = $_SESSION['cust_id'];
-    
+
     $ip = getIp();
     $value = $_GET['od_id'];
     $or_id = $_GET['o_id'];
