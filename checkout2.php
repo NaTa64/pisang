@@ -49,7 +49,7 @@ update();
           <li><a href="menu.php">Menu Makanan</a></li>
           <!-- <li><a href="stores.php">Stores</a></li> -->
           <li><a href="contact.php">Kontak</a></li>
-          <li><a href="#">Riwayat Pemesanan</a></li>
+          <li><a href="history.php">Riwayat Pemesanan</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
