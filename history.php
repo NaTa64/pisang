@@ -1,5 +1,9 @@
 <?php
-require("koneksi/koneksi.php"); // Including the db Connection
+require("koneksi/koneksi.php");
+
+if (!isset($_SESSION['username'])) {
+    echo "<script>window.open('login.php','_self')</script>";
+}
 ?>
 
 <html lang="en">
@@ -23,13 +27,11 @@ require("koneksi/koneksi.php"); // Including the db Connection
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo</a>
-            </div>
+        <!-- <a class="navbar-brand" href="#">Logo</a> -->            </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="home.php">Home</a></li>
                     <li><a href="menu.php">Menu Makanan</a></li>
-                    <li><a href="contact.php">Kontak</a></li>
                     <li class="active"><a href="history.php">Riwayat Pemesanan</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

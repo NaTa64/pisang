@@ -51,14 +51,12 @@ update();
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Logo</a>
-      </div>
+<!-- <a class="navbar-brand" href="#">Logo</a> -->      </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li class="active"><a href="menu.php">Menu Makanan</a></li>
-          <li><a href="contact.php">Kontak</a></li>
-          <li><a href="#">Riwayat Pemesanan</a></li>
+          <li><a href="history.php">Riwayat Pemesanan</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
@@ -74,7 +72,7 @@ update();
                 echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
               }
               ?></li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
         </ul>
       </div>
     </div>
@@ -92,7 +90,7 @@ update();
    </div>  ';
     } else {
       echo '<div class="container text-center">
-    <h1 style="color:red">Your Order has been Cancelled</h1>   
+    <h1 style="color:red">Pesanan Dibatalkan</h1>   
    </div>  ';
     }
   }

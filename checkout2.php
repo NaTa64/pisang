@@ -41,14 +41,11 @@ update();
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Logo</a>
-      </div>
+<!-- <a class="navbar-brand" href="#">Logo</a> -->      </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li><a href="menu.php">Menu Makanan</a></li>
-          <!-- <li><a href="stores.php">Stores</a></li> -->
-          <li><a href="contact.php">Kontak</a></li>
           <li><a href="history.php">Riwayat Pemesanan</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

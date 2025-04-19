@@ -25,6 +25,22 @@ if (!isset($_SESSION['username'])) {
       })
     </script>
 
+    <style>
+      .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .whatsapp-button img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
   </head>
 
   <body>
@@ -38,13 +54,12 @@ if (!isset($_SESSION['username'])) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Logo</a>
+          <!-- <a class="navbar-brand" href="#">Logo</a> -->
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="home.php">Home</a></li>
             <li class="active"><a href="menu.php">Menu Makanan</a></li>
-            <li><a href="contact.php">Kontak</a></li>
             <li><a href="history.php">Riwayat Pemesanan</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -54,7 +69,7 @@ if (!isset($_SESSION['username'])) {
                 <button class="btn btn-primary" name="search" type="submit">Search</button>
               </form>
             </li>
-            
+
             <li><?php
                 if (!isset($_SESSION['username'])) {
 
@@ -83,14 +98,14 @@ if (!isset($_SESSION['username'])) {
             <div class="panel panel-primary" style="border-radius:0px;">
               <div class="panel-heading" align="center" style="border-radius:0px;"><b style="font-size:17px;"><?php echo $row['item_name']; ?></b></div>
 
-              <div class="panel-body" align="center" style="height:250px; width:350px; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
-              
+              <div class="panel-body" align="center" style="height:250px; width:auto; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
+
               <div class="panel-footer" align="center"><b style="font-size:15px;">Harga : Rp<?php echo $row['harga']; ?></b></div>
-              
+
               <div class="panel-footer" align="center">
                 <b style="font-size:15px;">Stok : <?php echo $row['stok']; ?></b>
               </div>
-              
+
               <?php if ($row['stok'] > 0) { ?>
                 <a class="btn btn-light btn-lg btn-block" href="menu.php?itm_id=<?php echo $row['item_id']; ?>">Tambah ke keranjang</a>
               <?php } else { ?>
@@ -105,6 +120,9 @@ if (!isset($_SESSION['username'])) {
       </div>
     </div>
 
+    <a href="https://wa.me/+6289521598295" class="whatsapp-button" target="_blank">
+      <img src="Pictures/whatsapp.webp" alt="Logo WhatsApp">
+    </a>
 
   </body>
 

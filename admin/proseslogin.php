@@ -23,10 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result === false) {
         // Jika username tidak ditemukan
-        header('Location: login.php');
+        header('Location: login.php?error=Username atau Password salah');
         exit();
     } else {
-        // Verifikasi password dengan password_hash yang tersimpan
         if ($password == $result['password']) {
             // Jika password valid, set session untuk login admin
             $_SESSION['admin'] = $username; // Menyimpan username admin dalam session
@@ -37,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Jika password salah
-            echo '<div class="alert alert-danger">Password salah.</div>';
+            header('Location: login.php?error=Username atau Password salah');
             exit();
         }
     }

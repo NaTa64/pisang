@@ -20,7 +20,7 @@ include "../koneksi/koneksi.php";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
-  <title>Web Penjualan</title>
+  <title>Administrator</title>
   <style>
     /* Style the sidebar */
     /* Sidebar */
@@ -115,7 +115,7 @@ include "../koneksi/koneksi.php";
 
 <body>
   <div class="sidebar">
-  <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
     <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
     <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>

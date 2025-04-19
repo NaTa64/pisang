@@ -21,7 +21,7 @@ include "../koneksi/koneksi.php" ?>
 
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
 
-  <title>Web Penjualan</title>
+  <title>Administrator</title>
 
   <style>
     .sidebar {

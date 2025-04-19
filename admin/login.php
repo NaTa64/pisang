@@ -12,7 +12,7 @@ include "../koneksi/koneksi.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
-    <title>Web Penjualan</title>
+    <title>Administrator</title>
 </head>
 
 <body>
@@ -47,6 +47,11 @@ include "../koneksi/koneksi.php";
                         <div class="header-text mb-4">
                             <h2>Admin</h2>
                         </div>
+                        <?php if (isset($_GET['error'])) : ?>
+                            <?php if ($_GET['error'] == 'Username atau Password salah') : ?>
+                                <div class="alert alert-danger">Username atau Password salah</div>
+                            <?php endif; ?>
+                        <?php endif; ?>
                         <form action="proseslogin.php" method="post">
                             <div class="input-group mb-3">
                                 <input name="username" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Username" required>

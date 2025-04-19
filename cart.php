@@ -58,15 +58,13 @@ if (!isset($_SESSION['username'])) {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Logo</a>
+                    <!-- <a class="navbar-brand" href="#">Logo</a> -->
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="home.php">Home</a></li>
                         <li><a href="menu.php">Menu Makanan</a></li>
-                        <li><a href="contact.php">Kontak</a></li>
                         <li><a href="history.php">Riwayat Pemesanan</a></li>
-
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li style="top:7px;">
@@ -297,7 +295,7 @@ if (!isset($_SESSION['username'])) {
             </div>
         <?php } else {
             echo '<div class="container text-center">
-    <h1 style="color:green">Your Cart is Empty</h1>   
+    <h1 style="color:green">Keranjang Kosong</h1>   
    </div>  ';
         } ?>
 

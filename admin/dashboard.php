@@ -19,7 +19,7 @@ include "../koneksi/koneksi.php";
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="icon" type="image/png" href="./image aset/images-removebg-preview.png">
 
-  <title>Web Penjualan</title>
+  <title>Administrator</title>
 
   <style>
     /* Default Styles */
