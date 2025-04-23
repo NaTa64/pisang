@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2025 at 03:38 PM
+-- Generation Time: Apr 23, 2025 at 04:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,7 +58,7 @@ CREATE TABLE `banner` (
 
 INSERT INTO `banner` (`banner_id`, `banner_title`, `banner_image`) VALUES
 (1, 'Banner 1', 'Banner/food1.jpg'),
-(2, 'Banner 2', 'Banner/food2.jpg'),
+(2, 'Banner 2', ''),
 (3, 'Banner 3', 'Banner/food3.jpg'),
 (4, 'Banner 4', 'Banner/food4.jpg');
 
@@ -118,19 +118,19 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_keywords`, `aktif`) VALUES
-(1, 'Pisang Keju', 64, 10.000, 'Pictures/1.jpg', 'keju', 1),
-(2, 'Double-Double', 62, 4.000, 'Pictures/2.jpg', 'DOUBLE-DOUBLE,Chicken,Sandwich', 1),
-(3, 'Fries', 50, 15.000, 'Pictures/3.jpg', 'Fries, mcdonald,snacks', 1),
-(4, 'Chicken', 434, 5.000, 'Pictures/4.jpg', 'Chicken,Nuggets', 1),
-(5, 'Chicken Sandwich', 3, 3.900, 'Pictures/5.jpg', 'Chicken,Sandwich', 1),
-(6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', 'Curly,Fries,snacks', 1),
-(7, 'Blizzard', 620, 5.240, 'Pictures/7.jpg', 'Blizzard,Ice cream,desserts', 1),
-(8, 'Frosty', 392, 2.550, 'Pictures/8.jpg', 'Frosty', 1),
-(9, 'Mcflurry', 520, 2.110, 'Pictures/9.jpg', 'Ice cream,Mcflurry', 1),
-(10, 'a', 8, 11.011, 'Pictures/10.jpg', 'Bacon,Cheese,Burger', 1),
+(1, 'Pisang Keju', 10, 10.000, 'Pictures/1.jpg', 'keju', 1),
+(2, 'Pisang Gapit', 10, 10.000, 'Pictures/2.jpg', NULL, 1),
+(3, 'Pisang Keju', 10, 15.000, 'Pictures/3.jpg', NULL, 1),
+(4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
+(5, 'Chicken Sandwich', 3, 3.900, 'Pictures/5.jpg', NULL, 1),
+(6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', NULL, 0),
+(7, 'Blizzard', 620, 5.240, 'Pictures/7.jpg', NULL, 0),
+(8, 'Frosty', 392, 2.550, 'Pictures/8.jpg', NULL, 0),
+(9, 'Mcflurry', 520, 2.110, 'Pictures/9.jpg', NULL, 0),
+(10, 'a', 8, 11.011, 'Pictures/10.jpg', NULL, 0),
 (11, 'Ayam', 10, 200.000, 'Pictures/20230417_185527.jpeg', NULL, 0),
 (12, 'sapi', 1, 100.000, 'Pictures/Figure_1.png', NULL, 0),
-(13, 'bayi muffin', 80, 10.000, 'Pictures/Jake_Portrait_Render.webp', NULL, 1);
+(13, 'bayi muffin', 80, 10.000, 'Pictures/Jake_Portrait_Render.webp', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -159,9 +159,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `aktif`) VALUES
-(1, 2, '::1', 27.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diantar', '2025-03-26 13:48:03', NULL, 1),
-(2, 1, '125.160.113.77', 29.461, 'bebelak', 'jalan suci', '080808080808', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:47:55', '2025-04-05 14:35:44', 0),
-(3, 2, '::1', 17.000, 'Muhammad Fachriaw', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Telah Selesai', '2025-04-05 20:36:45', '2025-04-05 20:46:49', 0);
+(1, 2, '::1', 27.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:48:03', '2025-04-22 08:58:16', 0),
+(2, 1, '125.160.113.77', 29.461, 'bebelak', 'jalan suci', '080808080808', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:47:55', '2025-04-22 08:58:17', 0),
+(3, 2, '::1', 17.000, 'Muhammad Fachriaw', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Telah Selesai', '2025-04-05 20:36:45', '2025-04-22 08:58:18', 0);
 
 -- --------------------------------------------------------
 
