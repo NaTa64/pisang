@@ -59,7 +59,6 @@ function total_items()
 {
 
 	if (isset($_GET['itm_id'])) {
-
 		global $conn;
 		$ip = getIp();
 		$get_items = $conn->query('select *from cart where ip_add="' . $ip . '"');
@@ -70,7 +69,6 @@ function total_items()
 		$get_items = $conn->query('select *from cart where ip_add="' . $ip . '"');
 		$count_items = $get_items->rowCount();
 	}
-
 	echo $count_items;
 }
 

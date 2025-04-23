@@ -1,11 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
-  header('location:login.php');
-} else {
-  $username = $_SESSION['admin'];
-}
 include "../koneksi/koneksi.php";
+
+if (!isset($_SESSION['idadmin'])) {
+  header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -137,8 +136,8 @@ include "../koneksi/koneksi.php";
         <thead>
           <tr>
             <th>No</th>
-            <th>Kode</th>
             <th>Username</th>
+            <th>Kode</th>
           </tr>
         </thead>
 
@@ -150,9 +149,9 @@ include "../koneksi/koneksi.php";
         ?>
           <tbody>
             <tr>
-              <td><?php echo $nomor; ?></td>
-              <td><?php echo htmlspecialchars($lihat['cust_id']); ?></td>
+              <td width="5%"><?php echo $nomor; ?></td>
               <td><?php echo htmlspecialchars($lihat['cust_dname']); ?></td>
+              <td><?php echo htmlspecialchars($lihat['cust_id']); ?></td>
               <!-- <td>
                 <!-- Membuat nomor HP menjadi link WhatsApp dengan pesan otomatis -->
               <!-- <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', htmlspecialchars($lihat['no_hp'])); ?>?text=<?php echo urlencode('Terima Kasih Telah Melakukan Peminjaman Barang Di Jurusan Saya Harap Anda Dapat Mengembalikannya Sebelum Pukul 17:30 WITA TERIMA KASIH :) '); ?>" target="_blank" style="text-decoration: none">

@@ -1,13 +1,12 @@
 <?php
 session_start();
-// if (!isset($_SESSION['admin'])) {
-//     header('location:login.php');
-//     exit();
-// } else {
-//     $username = $_SESSION['admin'];
-// }
-
 include "../koneksi/koneksi.php";
+
+if (!isset($_SESSION['idadmin'])) {
+    header('location:login.php');
+    exit();
+}
+
 
 // Pastikan order_id diterima dengan benar (dari URL atau POST)
 if (isset($_GET['order_id'])) {

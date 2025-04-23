@@ -1,9 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin'])) {
+if (!isset($_SESSION['idadmin'])) {
   header('location:login.php');
-} else {
-  $username = $_SESSION['admin'];
 }
 ?>
 <?php
@@ -74,9 +72,9 @@ include "../koneksi/koneksi.php" ?>
   <div class="sidebar">
     <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
-    <a href="peminjam.php"><i class="fas fa-users"></i> Anggota</a>
-    <a href="peminjaman.php"><i class="fas fa-clipboard"></i> Peminjaman</a>
-    <a href="pengembalian.php"><i class="fas fa-undo"></i> Pengembalian</a>
+    <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
+    <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
+    <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
   </div>
 
   <div class="content">
@@ -96,7 +94,7 @@ include "../koneksi/koneksi.php" ?>
             while ($edit = $query->fetch(PDO::FETCH_ASSOC)) {
             ?>
               <!-- form start -->
-              <form role="form" action="editprodukproses.php" method="post">
+              <form role="form" action="editprodukproses.php" method="post" enctype="multipart/form-data">
                 <div class="box-body">
 
                   <div class="form-group">
@@ -105,10 +103,10 @@ include "../koneksi/koneksi.php" ?>
                   </div>
 
                   <!-- Jika mau ganti gambar -->
-                  <!-- <div class="form-group">
+                  <div class="form-group">
                     <label>Upload Gambar :</label>
                     <input type="file" name="gambar" class="form-control mt-2">
-                  </div> -->
+                  </div>
 
                   <div class="form-group">
                     <!-- <label>ID :</label> -->

@@ -1,5 +1,7 @@
 <?php
-include "../koneksi/koneksi.php";
+session_start();
+require('../koneksi/koneksi.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +18,6 @@ include "../koneksi/koneksi.php";
 </head>
 
 <body>
-
-    <?php
-    if (!isset($_session['admin'])) {
-        $_session['admin'] = "";
-    }
-    echo $_session['admin']; ?>
-
     <!----------------------- Main Container -------------------------->
     <div class="row" style="background:#0379C8">
         <div class="container d-flex justify-content-center align-items-center min-vh-100">

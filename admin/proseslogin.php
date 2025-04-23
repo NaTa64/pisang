@@ -28,8 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         if ($password == $result['password']) {
             // Jika password valid, set session untuk login admin
-            $_SESSION['admin'] = $username; // Menyimpan username admin dalam session
-            $_SESSION['admin_id'] = $result['id']; // Menyimpan ID admin dalam session
+            $_SESSION['idadmin'] = $result['id_admin']; // Menyimpan ID admin dalam session
 
             // Redirect ke dashboard admin
             header("Location: dashboard.php");

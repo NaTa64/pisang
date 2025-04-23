@@ -1,12 +1,11 @@
 <?php
 
 session_start();
-if (!isset($_SESSION['admin'])) {
-  header('location:login.php');
-} else {
-  $username = $_SESSION['admin'];
-}
 include "../koneksi/koneksi.php";
+
+if (!isset($_SESSION['idadmin'])) {
+  header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>

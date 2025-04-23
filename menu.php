@@ -97,11 +97,8 @@ if (!isset($_SESSION['username'])) {
           <div class="col-sm-4">
             <div class="panel panel-primary" style="border-radius:0px;">
               <div class="panel-heading" align="center" style="border-radius:0px;"><b style="font-size:17px;"><?php echo $row['item_name']; ?></b></div>
-
               <div class="panel-body" align="center" style="height:250px; width:auto; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
-
               <div class="panel-footer" align="center"><b style="font-size:15px;">Harga : Rp<?php echo $row['harga']; ?></b></div>
-
               <div class="panel-footer" align="center">
                 <b style="font-size:15px;">Stok : <?php echo $row['stok']; ?></b>
               </div>

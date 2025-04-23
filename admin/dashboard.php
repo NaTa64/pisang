@@ -1,6 +1,11 @@
 <?php
+session_start();
 
-include "../koneksi/koneksi.php";
+require ('../koneksi/koneksi.php');
+
+if (!isset($_SESSION['idadmin'])) {
+  echo "<script>window.open('login.php','_self')</script>";
+}
 
 ?>
 
@@ -12,7 +17,9 @@ include "../koneksi/koneksi.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/sb-admin-2.css">
+
+  <script src="/js/jquery.min1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -22,7 +29,6 @@ include "../koneksi/koneksi.php";
   <title>Administrator</title>
 
   <style>
-    /* Default Styles */
     /* Sidebar Styling */
     .sidebar {
       height: 100%;
@@ -141,7 +147,7 @@ include "../koneksi/koneksi.php";
       }
     }
 
-    /* On screens that are less than 400px, display the bar vertically, instead of horizontally
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
     /* @media screen and (max-width: 400px) {
       .sidebar a {
         text-align: center;
@@ -154,7 +160,7 @@ include "../koneksi/koneksi.php";
 <body>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
     <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
