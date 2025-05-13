@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2025 at 04:03 AM
+-- Generation Time: May 13, 2025 at 06:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -118,11 +118,11 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_keywords`, `aktif`) VALUES
-(1, 'Pisang Keju', 10, 10.000, 'Pictures/1.jpg', 'keju', 1),
+(1, 'Pisang Keju', 10, 10.000, 'Pictures/1.jpg', 'fachri', 1),
 (2, 'Pisang Gapit', 10, 10.000, 'Pictures/2.jpg', NULL, 1),
 (3, 'Pisang Keju', 10, 15.000, 'Pictures/3.jpg', NULL, 1),
 (4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
-(5, 'Chicken Sandwich', 3, 3.900, 'Pictures/5.jpg', NULL, 1),
+(5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 1),
 (6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', NULL, 0),
 (7, 'Blizzard', 620, 5.240, 'Pictures/7.jpg', NULL, 0),
 (8, 'Frosty', 392, 2.550, 'Pictures/8.jpg', NULL, 0),
@@ -160,8 +160,10 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `aktif`) VALUES
 (1, 2, '::1', 27.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:48:03', '2025-04-22 08:58:16', 0),
-(2, 1, '125.160.113.77', 29.461, 'bebelak', 'jalan suci', '080808080808', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:47:55', '2025-04-22 08:58:17', 0),
-(3, 2, '::1', 17.000, 'Muhammad Fachriaw', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Telah Selesai', '2025-04-05 20:36:45', '2025-04-22 08:58:18', 0);
+(2, 1, '125.160.113.77', 29.461, 'bebelak', 'jalan suci', '089521598295', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-03-26 13:47:55', '2025-04-22 08:58:17', 0),
+(3, 2, '::1', 17.000, 'Muhammad Fachriaw', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Telah Selesai', '2025-04-05 20:36:45', '2025-04-22 08:58:18', 0),
+(4, 2, '::1', NULL, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Tertunda', NULL, NULL, 0),
+(5, 2, '::1', NULL, 'Muhammad Fachri1', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Tertunda', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -264,7 +266,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

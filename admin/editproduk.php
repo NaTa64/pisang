@@ -102,11 +102,28 @@ include "../koneksi/koneksi.php" ?>
                     <img src="../<?php echo $edit['item_image']; ?>" alt="Gambar Produk" width="200" height="200">
                   </div>
 
-                  <!-- Jika mau ganti gambar -->
-                  <div class="form-group">
-                    <label>Upload Gambar :</label>
-                    <input type="file" name="gambar" class="form-control mt-2">
+                  <!-- Link untuk menampilkan bagian upload gambar -->
+                  <a id="tombol-upload" class="btn btn-success" style="margin-top: 10px;">Upload Gambar</a>
+
+                  <!-- Bagian upload gambar yang awalnya tidak terlihat -->
+                  <div id="bagian-upload" style="display: none;">
+                    <div class="form-group">
+                      <input type="file" name="gambar" class="form-control mt-2">
+                    </div>
                   </div>
+
+                  <script>
+                    // Tambahkan event listener pada tombol untuk menampilkan bagian upload gambar
+                    document.getElementById("tombol-upload").addEventListener("click", function() {
+                      // Ubah visibilitas bagian upload gambar menjadi terlihat atau tidak terlihat
+                      var bagianUpload = document.getElementById("bagian-upload");
+                      if (bagianUpload.style.display === "none") {
+                        bagianUpload.style.display = "block";
+                      } else {
+                        bagianUpload.style.display = "none";
+                      }
+                    });
+                  </script>
 
                   <div class="form-group">
                     <!-- <label>ID :</label> -->

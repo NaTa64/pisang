@@ -209,20 +209,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $cust_id = $_SESSION['cust_id'];
     $ip = getIp();
-    // $f_name = $_POST['first_name'];
-    // $l_name = $_POST['last_name'];
     $name = $_POST['name'];
-    // $e_mail = $_POST['email_address'];
     $alamat = $_POST['alamat'];
     $phone = $_POST['phone'];
-    // $zip = $_POST['zip'];
-    // $state = $_POST['state'];
-    // $country = $_POST['country'];
+    $status = 'Dibatalkan';
 
-    $status = 'Tertunda';
-
-    // $insert_c = 'insert into orders (order_amount,cust_ip,fname,lname,email,street,state,country,phone,zip,delivery_type,payment,status) values (NULL,"' . $ip . '","' . $f_name . '","' . $l_name . '","' . $e_mail . '","' . $street . '","' . $state . '","' . $country . '","' . $phone . '","' . $zip . '","","","' . $status . '")';
-    // $insert_c = 'insert into orders (order_amount,cust_ip,name,alamat,phone,delivery_type,payment,status) values (NULL,"' . $ip . '","' . $name . '","' . $alamat . '","' . $phone . '","","","' . $status . '")';
     $insert_c = 'insert into orders (cust_ip,cust_id,name,alamat,phone,delivery_type,payment,status) values ("' . $ip . '","' . $cust_id . '","' . $name . '","' . $alamat . '","' . $phone . '","","","' . $status . '")';
     if ($conn->query($insert_c) == TRUE) {
         echo "<script>window.open('checkout2.php','_self')</script>";

@@ -4,8 +4,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
 remove();
 update();
 
-
-
 ?>
 <html lang="en">
 

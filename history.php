@@ -15,6 +15,44 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Menambahkan efek hover dengan bayangan dan pembesaran */
+        #tabelpesanan tbody tr:hover {
+            background-color: #f0f8ff;
+            /* Biru terang saat hover */
+            transform: scale(1.03);
+            /* Membesarkan sedikit */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Menambahkan bayangan halus */
+            transition: all 0.3s ease;
+        }
+
+        /* Animasi pada tombol Edit dan Hapus */
+        #tabelpesanan .btn-group a {
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        /* Efek hover pada tombol Edit */
+        #tabelpesanan .btn-group .btn-primary:hover {
+            transform: scale(1.1);
+            /* Membesarkan tombol Edit sedikit */
+            background-color: #0056b3;
+            /* Mengubah warna latar belakang tombol Edit menjadi biru lebih gelap */
+            color: white;
+            /* Mengubah warna teks menjadi putih */
+        }
+
+        /* Efek hover pada tombol Hapus */
+        #tabelpesanan .btn-group .btn-danger:hover {
+            transform: scale(1.1);
+            /* Membesarkan tombol Hapus sedikit */
+            background-color: #dc3545;
+            /* Mengubah warna latar belakang tombol Hapus menjadi merah terang */
+            color: white;
+            /* Mengubah warna teks menjadi putih */
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +65,8 @@ if (!isset($_SESSION['username'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <!-- <a class="navbar-brand" href="#">Logo</a> -->            </div>
+                <!-- <a class="navbar-brand" href="#">Logo</a> -->
+            </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="home.php">Home</a></li>
@@ -52,10 +91,8 @@ if (!isset($_SESSION['username'])) {
     <div class="container">
         <div class="row">
             <h2 class="page-header">Riwayat Pemesanan</h2>
-            <!-- <hr> -->
-            <!-- <div class="row-search">
-        <a href="tambahpeminjaman.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Peminjaman</a>
-      </div> -->
+            <button onclick="window.print()">Cetak</button>
+
             <table id="tabelpesanan" class="table table-bordered table-hover">
                 <thead>
                     <tr>

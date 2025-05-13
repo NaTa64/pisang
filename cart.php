@@ -303,13 +303,3 @@ if (!isset($_SESSION['username'])) {
 
     </html>
 <?php } ?>
-
-<?php
-// if (isset($_GET['item_id']) && $_GET['delete'] == 'true') {
-//     $item_id = $_GET['item_id'];
-//     $conn->query("DELETE FROM order_items WHERE i_id = '$item_id'");
-//     // $conn->query("DELETE FROM cart WHERE i_id = '$item_id'");
-//     header("Location: cart.php");
-//     exit;
-// }
-?>

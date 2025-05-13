@@ -212,8 +212,12 @@ if (!isset($_SESSION['idadmin'])) {
 
               <td><?php echo $lihat['alamat']; ?></td>
 
-              <td><?php echo $lihat['phone']; ?></td>
+              <!-- <td><a href="https://wa.me/<?php echo $lihat['phone']; ?>" target="_blank">
+                  <?php echo $lihat['phone']; ?>
+              </td> -->
 
+              <td><?php echo $lihat['phone']; ?></td>
+              
               <!-- menampilkan produk yang dibeli -->
               <!-- <td>
                 <?php foreach ($produk as $value) {
