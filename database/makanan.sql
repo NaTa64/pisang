@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2025 at 06:33 PM
+-- Generation Time: May 23, 2025 at 08:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -122,7 +122,7 @@ INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `ite
 (2, 'Pisang Gapit', 10, 10.000, 'Pictures/2.jpg', NULL, 1),
 (3, 'Pisang Keju', 10, 15.000, 'Pictures/3.jpg', NULL, 1),
 (4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
-(5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 1),
+(5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 0),
 (6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', NULL, 0),
 (7, 'Blizzard', 620, 5.240, 'Pictures/7.jpg', NULL, 0),
 (8, 'Frosty', 392, 2.550, 'Pictures/8.jpg', NULL, 0),
@@ -266,7 +266,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
