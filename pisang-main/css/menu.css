@@ -1,0 +1,44 @@
+/* Efek transisi panel */
+.panel {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover untuk panel */
+.panel:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+}
+.btn-md {
+  font-size: 20px;
+}
+
+.btn-tambah {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.btn-tambah:hover {
+  background-color: #3e9943;
+  color: yellow;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-8px);
+}
+
+.whatsapp-button img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
