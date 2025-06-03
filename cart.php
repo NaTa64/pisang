@@ -263,12 +263,6 @@ if (!isset($_SESSION['username'])) {
                                                         echo number_format((float)$ongkir, 3, '.', ''); ?></th>
                                             </tr>
 
-                                            <!-- <tr>
-                                                <td>Tax</td>
-                                                <th>$<?php $tax = ($total * 6.25) / 100;
-                                                        echo number_format((float)$tax, 3, '.', ''); ?></th>
-                                            </tr> -->
-
                                             <tr class="total">
                                                 <td>Total</td>
                                                 <th>Rp<?php $mtotal = $final_total + $ongkir;
