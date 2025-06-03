@@ -8,7 +8,7 @@ update();
 <html lang="en">
 
 <head>
-    <title>E-Commerce</title>
+    <title>WARUNG ZAYN</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -61,8 +61,6 @@ update();
                 <ul class="nav navbar-nav navbar-right">
                     <li style="top:7px;">
                         <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-                            <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-primary" name="search" type="submit">Search</button>
                         </form>
                     <li><?php
                         if (!isset($_SESSION['username'])) {
@@ -72,7 +70,7 @@ update();
                             echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
                         }
                         ?></li>
-                    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +84,7 @@ update();
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Checkout - Address</li>
+                        <li>Checkout - Alamat</li>
                     </ul>
                 </div>
 
@@ -95,23 +93,34 @@ update();
                     <form method="post" action="" class="form1" enctype="multipart/form-data">
                         <h2>Checkout</h2>
                         <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
+                            <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Alamat</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Metode Pengiriman</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Metode Pembayaran</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Review Pesanan</a>
                             </li>
                         </ul>
                         <br>
                         <div class="table">
                             <div class="content">
                                 <div class="row">
+                                    <!-- <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="first_name" id="firstname" placeholder="First Name" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="last_name" id="lastname" placeholder="Last Name" required>
+                                        </div>
+                                    </div> -->
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama" required maxlength="1">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama" required>
                                         </div>
                                     </div>
                                 </div>
@@ -120,6 +129,11 @@ update();
 
                                 <!-- /.row -->
                                 <div class="row">
+                                    <!-- <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="email_address" class="form-control" id="email" placeholder="Email Address" required>
+                                        </div>
+                                    </div> -->
 
                                     <div class="col-sm-12   ">
                                         <div class="form-group">
@@ -133,16 +147,36 @@ update();
                                         </div>
                                     </div>
 
+                                    <!-- <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" name="zip" class="form-control" id="zip" placeholder="Zip" required>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" name="state" class="form-control" id="state" placeholder="State" required>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <input type="text" name="country" class="form-control" id="country" placeholder="Country" required>
+                                        </div>
+                                    </div> -->
+
+
+
                                 </div>
                                 <!-- /.row -->
                                 <br>
 
                                 <div class="box-footer">
                                     <div class="pull-left">
-                                        <a href="cart.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+                                        <a href="cart.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Kembali Ke Keranjang</a>
                                     </div>
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-primary">Continue to Delivery Method<i class="fa fa-chevron-right"></i>
+                                        <button type="submit" class="btn btn-primary">Lanjutkan Ke Metode Pengiriman<i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>

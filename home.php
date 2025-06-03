@@ -5,7 +5,7 @@ require("koneksi/koneksi.php");
 <html lang="en">
 
 <head>
-  <title>E-Commerce</title>
+  <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,7 +28,7 @@ require("koneksi/koneksi.php");
       height: auto;
       padding-top: 8rem;
       padding-bottom: 8rem;
-      background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(Banner/bg.jpg);
+      background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(Banner/pisang.jpg);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover
@@ -59,9 +59,9 @@ require("koneksi/koneksi.php");
 <body>
   <header class="masthead d-flex">
     <div class="container text-center" style="padding:200;">
-      <h1 class="mb-1">E-Commerce Site</h1>
+      <h1 class="mb-1">WARUNG ZAYN</h1>
       <h3 class="mb-5">
-        Ayo pesan makananmu sekarang!!!
+        AYO PESAN MAKANANMU SEKARANG !!
       </h3>
       <a class="btn btn-primary " href="menu.php">Pergi ke Menu</a>
 

@@ -6,7 +6,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
 <html lang="en">
 
 <head>
-  <title>E-Commerce</title>
+  <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,22 +16,9 @@ require("koneksi/koneksi.php"); // Including the db Connection
     $().alert()
     $(".alert").alert()
   </script>
-  <style>
-    .colorgraph {
-      height: 5px;
-      border-top: 0;
-      background: #c4e17f;
-      border-radius: 5px;
-      background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-      background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-      background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-      background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-    }
-  </style>
 </head>
 
 <body>
-
   <nav class="navbar navbar-inverse" style="border-radius:0px;">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -50,8 +37,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
             <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-              <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary" name="search" type="submit">Search</button>
             </form>
           <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
         </ul>
@@ -80,7 +65,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
     </form>
 
   </div> <!-- /container -->
-
 
 </body>
 

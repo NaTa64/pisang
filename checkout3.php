@@ -9,7 +9,7 @@ update();
 <html lang="en">
 
 <head>
-  <title>E-Commerce</title>
+  <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,8 +50,6 @@ update();
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
             <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-              <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary" name="search" type="submit">Search</button>
             </form>
           <li><?php
               if (!isset($_SESSION['username'])) {
@@ -61,7 +59,7 @@ update();
                 echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
               }
               ?></li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
         </ul>
       </div>
     </div>
@@ -75,7 +73,7 @@ update();
           <ul class="breadcrumb">
             <li><a href="#">Home</a>
             </li>
-            <li>Checkout - Payment Method</li>
+            <li>Checkout - Metode Pembayaran</li>
           </ul>
         </div>
 
@@ -84,13 +82,13 @@ update();
           <form method="post" action="checkout4.php" class="form1">
             <h2>Checkout</h2>
             <ul class="nav nav-pills nav-justified">
-              <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
+              <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Alamat</a>
               </li>
-              <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
+              <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Metode Pengiriman</a>
               </li>
-              <li class="active"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
+              <li class="active"><a href="#"><i class="fa fa-money"></i><br>Metode Pembayaran</a>
               </li>
-              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Review Pesanan</a>
               </li>
             </ul>
             <br>
@@ -104,8 +102,8 @@ update();
                     <a href="checkout3.php?pay_id=1&&o_id=<?php orders(); ?>"><button type="button" class="form-control input-lg" style="border-radius:0px;" name="payment1">Payment gateway</button></a>
                   </div> -->
 
-                  <div class="col-sm-6">
-                    <a href="checkout3.php?pay_id=2&&o_id=<?php orders(); ?>"><button type="button" class="form-control input-lg" style="border-radius:0px;" name="payment2">Cash on Delivery</button></a>
+                  <div class="col-sm-12">
+                    <a href="checkout3.php?pay_id=2&&o_id=<?php orders(); ?>"><button type="button" class="form-control input-lg" style="border-radius:0px;" name="payment2">Tunai</button></a>
                   </div>
                   <hr>
                 </div>
@@ -117,10 +115,10 @@ update();
 
               <div class="box-footer">
                 <div class="pull-left">
-                  <a href="checkout2.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to Delivery</a>
+                  <a href="checkout2.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Kembali Ke Metode Pengiriman</a>
                 </div>
                 <div class="pull-right">
-                  <button type="submit" class="btn btn-primary">Continue to Order Review<i class="fa fa-chevron-right"></i>
+                  <button type="submit" class="btn btn-primary">Lanjutkan Ke Review Pesanan<i class="fa fa-chevron-right"></i>
                   </button>
                 </div>
               </div>

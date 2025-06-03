@@ -8,66 +8,66 @@ require("koneksi/koneksi.php"); // Including the db Connection
 // } else {
 ?>
 
-<html lang="en">
+  <html lang="en">
 
-<head>
-  <title>E-Commerce</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/menu.css">
+  <head>
+    <title>WARUNG ZAYN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/menu.css">
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
 
-  <script>
-    $(function() {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
+  </head>
 
-</head>
+  <body>
 
-<body>
+    <nav class="navbar navbar-inverse" style="border-radius:0px;">
+      <?php cart(); ?>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Logo</a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="home.php">Home</a></li>
+            <li class="active"><a href="menu.php">Menu Makanan</a></li>
+            <li><a href="history.php">Riwayat Pemesanan</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li style="top:7px;">
+              <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
+              </form>
+            </li>
 
-  <nav class="navbar navbar-inverse" style="border-radius:0px;">
-    <?php cart(); ?>
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- <a class="navbar-brand" href="#">Logo</a> -->
+            <li><?php
+                if (!isset($_SESSION['username'])) {
+
+                  echo "<a href='login.php'><span class='glyphicon glyphicon-user'></span> Login</a>";
+                } else {
+                  echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
+                }
+                ?></li>
+            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="home.php">Home</a></li>
-          <li class="active"><a href="menu.php">Menu Makanan</a></li>
-          <li><a href="history.php">Riwayat Pemesanan</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li style="top:7px;">
-            <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-              <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary" name="search" type="submit">Search</button>
-            </form>
-          </li>
-
-          <li><?php
-              if (!isset($_SESSION['username'])) {
-
-                echo "<a href='login.php'><span class='glyphicon glyphicon-user'></span> Login</a>";
-              } else {
-                echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
-              }
-              ?></li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
-        </ul>
+      <div class="collapse navbar-collapse" style="text-align:center; background-color:#eeeeee; ">
+        <h4>Selamat datang <?php echo $_SESSION['cust_name']; ?></h4>
       </div>
-    </div>
 
     <!-- Pesan selamat datang -->
     <?php if (isset($_SESSION['username'])) { ?>
@@ -97,25 +97,13 @@ require("koneksi/koneksi.php"); // Including the db Connection
 
             <?php if ($row['stok'] > 0) { ?>
               <?php if (isset($_SESSION['username'])) { ?>
-                <a class="btn btn-tambah btn-md btn-block" href="menu.php?itm_id=<?php echo $row['item_id']; ?>">Tambah ke keranjang</a>
-              <?php } else { ?>
-                <a class="btn btn-tambah btn-md btn-block" href="login.php" style="pointer-events: none; cursor: default;">Login untuk tambah ke keranjang</a>
-              <?php } ?>
-            <?php } else { ?>
-              <button class="btn btn-light btn-lg btn-block" disabled style="color: red;">Stok habis. Silakan cek kembali nanti.</button>
-            <?php } ?>
-          </div>
-        </div>
-
-
-      <?php } ?>
     </div>
-  </div>
 
-  <a href="https://wa.me/+6289521598295?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
-    <img src="Pictures/whatsapp.webp" alt="Logo WhatsApp">
-  </a>
+    <a href="https://wa.me/+6289521598295?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
+      <img src="Pictures/whatsapp.webp" alt="Logo WhatsApp">
+    </a>
 
-</body>
+  </body>
 
-</html>
+  </html>
+<?php } ?>

@@ -8,7 +8,7 @@ update();
 <html lang="en">
 
 <head>
-  <title>E-Commerce</title>
+  <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -61,8 +61,6 @@ update();
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
             <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-              <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary" name="search" type="submit">Search</button>
             </form>
           <li><?php
               if (!isset($_SESSION['username'])) {
