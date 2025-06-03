@@ -3,9 +3,9 @@ session_start();
 
 require("koneksi/koneksi.php"); // Including the db Connection
 
-if (!isset($_SESSION['username'])) {
-  echo "<script>window.open('login.php','_self')</script>";
-} else {
+// if (!isset($_SESSION['username'])) {
+//   echo "<script>window.open('login.php','_self')</script>";
+// } else {
 ?>
 
   <html lang="en">
@@ -68,35 +68,35 @@ if (!isset($_SESSION['username'])) {
       <div class="collapse navbar-collapse" style="text-align:center; background-color:#eeeeee; ">
         <h4>Selamat datang <?php echo $_SESSION['cust_name']; ?></h4>
       </div>
-    </nav>
 
-    <!-- menu makanan -->
-    <div class="container">
-      <div class="row">
-        <?php
-        $stmt = $conn->query('select item_id,item_name,harga,stok,item_image from items where aktif=1');
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        ?>
-          <div class="col-sm-4">
-            <div class="panel panel-primary" style="border-radius:10px 10px 10px 10px;">
-              <div class="panel-heading" align="center" style="border-radius:7px 7px 0px 0px;"><b style="font-size:17px;"><?php echo $row['item_name']; ?></b></div>
-              <div class="panel-body" align="center" style="height:250px; width:auto; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
-              <div class="panel-footer" align="center"><b style="font-size:15px;">Harga : Rp<?php echo $row['harga']; ?></b></div>
-              <div class="panel-footer" align="center">
-                <b style="font-size:15px;">Stok : <?php echo $row['stok']; ?></b>
-              </div>
-
-              <?php if ($row['stok'] > 0) { ?>
-                <a class="btn btn-tambah btn-md btn-block" href="menu.php?itm_id=<?php echo $row['item_id']; ?>">Tambah ke keranjang</a>
-              <?php } else { ?>
-                <button class="btn btn-light btn-lg btn-block" disabled style="color: red;">Stok habis. Silakan cek kembali nanti.</button>
-              <?php } ?>
-            </div>
-          </div>
-
-
-        <?php } ?>
+    <!-- Pesan selamat datang -->
+    <?php if (isset($_SESSION['username'])) { ?>
+      <div class="collapse navbar-collapse" style="text-align:center; background-color:#eeeeee; ">
+        <h4>Selamat datang <?php echo $_SESSION['cust_name']; ?></h4>
       </div>
+    <?php } ?>
+    <!-- End Pesan selamat datang -->
+
+  </nav>
+
+  <!-- menu makanan -->
+  <div class="container">
+    <div class="row">
+      <?php
+      $stmt = $conn->query('select item_id,item_name,harga,stok,item_image from items where aktif=1');
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+      ?>
+        <div class="col-sm-4">
+          <div class="panel panel-primary" style="border-radius:10px 10px 10px 10px;">
+            <div class="panel-heading" align="center" style="border-radius:7px 7px 0px 0px;"><b style="font-size:17px;"><?php echo $row['item_name']; ?></b></div>
+            <div class="panel-body" align="center" style="height:250px; width:auto; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
+            <div class="panel-footer" align="center"><b style="font-size:15px;">Harga : Rp<?php echo $row['harga']; ?></b></div>
+            <div class="panel-footer" align="center">
+              <b style="font-size:15px;">Stok : <?php echo $row['stok']; ?></b>
+            </div>
+
+            <?php if ($row['stok'] > 0) { ?>
+              <?php if (isset($_SESSION['username'])) { ?>
     </div>
 
     <a href="https://wa.me/+6289521598295?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
