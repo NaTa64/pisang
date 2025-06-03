@@ -108,21 +108,10 @@ update();
                         <div class="table">
                             <div class="content">
                                 <div class="row">
-                                    <!-- <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="first_name" id="firstname" placeholder="First Name" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="last_name" id="lastname" placeholder="Last Name" required>
-                                        </div>
-                                    </div> -->
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama" required>
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama" required maxlength="1">
                                         </div>
                                     </div>
                                 </div>
@@ -131,11 +120,6 @@ update();
 
                                 <!-- /.row -->
                                 <div class="row">
-                                    <!-- <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" name="email_address" class="form-control" id="email" placeholder="Email Address" required>
-                                        </div>
-                                    </div> -->
 
                                     <div class="col-sm-12   ">
                                         <div class="form-group">
@@ -148,26 +132,6 @@ update();
                                             <input type="text" class="form-control" name="phone" id="phone" placeholder="No Handphone" required>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="zip" class="form-control" id="zip" placeholder="Zip" required>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="state" class="form-control" id="state" placeholder="State" required>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="country" class="form-control" id="country" placeholder="Country" required>
-                                        </div>
-                                    </div> -->
-
-
 
                                 </div>
                                 <!-- /.row -->

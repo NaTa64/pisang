@@ -15,44 +15,6 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <style>
-        /* Menambahkan efek hover dengan bayangan dan pembesaran */
-        #tabelpesanan tbody tr:hover {
-            background-color: #f0f8ff;
-            /* Biru terang saat hover */
-            transform: scale(1.03);
-            /* Membesarkan sedikit */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Menambahkan bayangan halus */
-            transition: all 0.3s ease;
-        }
-
-        /* Animasi pada tombol Edit dan Hapus */
-        #tabelpesanan .btn-group a {
-            transition: transform 0.2s ease, background-color 0.3s ease;
-        }
-
-        /* Efek hover pada tombol Edit */
-        #tabelpesanan .btn-group .btn-primary:hover {
-            transform: scale(1.1);
-            /* Membesarkan tombol Edit sedikit */
-            background-color: #0056b3;
-            /* Mengubah warna latar belakang tombol Edit menjadi biru lebih gelap */
-            color: white;
-            /* Mengubah warna teks menjadi putih */
-        }
-
-        /* Efek hover pada tombol Hapus */
-        #tabelpesanan .btn-group .btn-danger:hover {
-            transform: scale(1.1);
-            /* Membesarkan tombol Hapus sedikit */
-            background-color: #dc3545;
-            /* Mengubah warna latar belakang tombol Hapus menjadi merah terang */
-            color: white;
-            /* Mengubah warna teks menjadi putih */
-        }
-    </style>
 </head>
 
 <body>
