@@ -6,19 +6,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
 <html lang="en">
 
 <head>
-	<style>
-		.colorgraph {
-			height: 5px;
-			border-top: 0;
-			background: #c4e17f;
-			border-radius: 5px;
-			background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-			background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-			background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-			background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-		}
-	</style>
-	<title>E-Commerce</title>
+	<title>WARUNG ZAYN</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,20 +24,16 @@ require("koneksi/koneksi.php"); // Including the db Connection
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Logo</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="home.php">Home</a></li>
-					<li><a href="menu.php">Food Menu</a></li>
-					<li><a href="stores.php">Stores</a></li>
+					<li><a href="menu.php">Menu Makanan</a></li>
 					<li><a href="#">Riwayat Pemesanan</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li style="top:7px;">
 						<form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-							<input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-							<button class="btn btn-primary" name="search" type="submit">Search</button>
 						</form>
 					<li><?php
 						if (!isset($_SESSION['username'])) {
@@ -59,7 +43,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
 							echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
 						}
 						?></li>
-					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> keranjang</a></li>
 				</ul>
 			</div>
 		</div>
@@ -69,7 +53,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
 			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 				<form role="form" method="post" action="register.php" enctype="multipart/form-data">
 					<h2>Register <!--<small>It's free and always will be.</small>--></h2>
-					<hr class="colorgraph">
 					<div class="row">
 						<!-- <div class="col-xs-12 col-sm-6 col-md-6">
 							<div class="form-group">
@@ -85,7 +68,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
 					</div>
 
 					<div class="form-group">
-						<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3" required="">
+						<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Tampilan Nama" tabindex="3" required="">
 					</div>
 
 					<div class="form-group">
@@ -121,8 +104,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
 							By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 						</div>
 					</div> -->
-
-					<hr class="colorgraph">
 					<div class="row">
 						<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="8"></div>
 						<div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Login</a></div>
@@ -174,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$check_user = $stmt->rowCount();
 
 	if ($check_user > 0) {
-		echo '<p class="h4"><script>alert("username sudah ada!")</script></p>';
+		echo '<p class="h4"><script>alert("username sudah digunakan, silahkan ganti!")</script></p>';
 		exit();
 	}
 

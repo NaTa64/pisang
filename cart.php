@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
     <html lang="en">
 
     <head>
-        <title>E-Commerce</title>
+        <title>WARUNG ZAYN</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -69,8 +69,6 @@ if (!isset($_SESSION['username'])) {
                     <ul class="nav navbar-nav navbar-right">
                         <li style="top:7px;">
                             <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-                                <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-primary" name="search" type="submit">Search</button>
                             </form>
                         <li><?php
                             if (!isset($_SESSION['username'])) {
@@ -102,7 +100,7 @@ if (!isset($_SESSION['username'])) {
                             <ul class="breadcrumb">
                                 <li><a href="#">Home</a>
                                 </li>
-                                <li>Shopping cart</li>
+                                <li>Keranjang</li>
                             </ul>
                         </div>
 
@@ -110,17 +108,17 @@ if (!isset($_SESSION['username'])) {
 
                             <form method="post" action="cart.php" class="form1">
 
-                                <h1>Shopping cart</h1>
-                                <p class="text-muted">You currently have <?php total_items(); ?> item(s) in your cart.</p>
+                                <h1>Keranjang</h1>
+                                <p class="text-muted">Saat ini anda memiliki <?php total_items(); ?> item di keranjangmu.</p>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th colspan="3">Product</th>
+                                                <th colspan="3">Nama</th>
                                                 <!-- <th colspan="2">Stok</th> -->
-                                                <th>Quantity</th>
+                                                <th>Jumlah</th>
                                                 <th></th>
-                                                <th>Unit price</th>
+                                                <th>Harga/pcs</th>
                                                 <th colspan="2">Total</th>
                                             </tr>
                                         </thead>
@@ -232,7 +230,7 @@ if (!isset($_SESSION['username'])) {
 
 
                                     <div class="pull-left">
-                                        <a href="menu.php" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                        <a href="menu.php" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Lanjut Tambahkan Menu</a>
                                     </div>
 
                                 </div>
@@ -247,9 +245,9 @@ if (!isset($_SESSION['username'])) {
                         <div class="col-md-3">
                             <div class="box" id="order-summary">
                                 <div class="box-header">
-                                    <h3>Order summary</h3>
+                                    <h3>Ringkasan pesanan</h3>
                                 </div>
-                                <p class="text-muted">Shipping and additional costs may apply.</p>
+                                <p class="text-muted">Biaya pengiriman dan biaya tambahan mungkin berlaku.</p>
 
                                 <div class="table-responsive">
                                     <table class="table">
@@ -265,6 +263,12 @@ if (!isset($_SESSION['username'])) {
                                                         echo number_format((float)$ongkir, 3, '.', ''); ?></th>
                                             </tr>
 
+                                            <!-- <tr>
+                                                <td>Tax</td>
+                                                <th>$<?php $tax = ($total * 6.25) / 100;
+                                                        echo number_format((float)$tax, 3, '.', ''); ?></th>
+                                            </tr> -->
+
                                             <tr class="total">
                                                 <td>Total</td>
                                                 <th>Rp<?php $mtotal = $final_total + $ongkir;
@@ -273,7 +277,7 @@ if (!isset($_SESSION['username'])) {
                                         </tbody>
                                     </table>
                                     <br>
-                                    <a href="checkout1.php"><i class="fa fa-chevron-left"></i><button class="btn btn-primary btn_block"> Proceed to Checkout</button></a>
+                                    <a href="checkout1.php"><i class="fa fa-chevron-left"></i><button class="btn btn-primary btn_block"> Proses Untuk Checkout</button></a>
 
 
                                 </div>

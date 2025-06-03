@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("koneksi/koneksi.php"); // Including the db Connection	
+require("koneksi/koneksi.php"); // Including the db Connection  
 remove();
 update();
 
@@ -8,7 +8,7 @@ update();
 <html lang="en">
 
 <head>
-  <title>E-Commerce</title>
+  <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -49,8 +49,6 @@ update();
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">
             <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-              <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary" name="search" type="submit">Search</button>
             </form>
           <li><?php
               if (!isset($_SESSION['username'])) {
@@ -60,7 +58,7 @@ update();
                 echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
               }
               ?></li>
-          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
         </ul>
       </div>
     </div>
@@ -74,7 +72,7 @@ update();
           <ul class="breadcrumb">
             <li><a href="#">Home</a>
             </li>
-            <li>Checkout - Delivery Method</li>
+            <li>Checkout - Metode Pengiriman</li>
           </ul>
         </div>
 
@@ -83,13 +81,13 @@ update();
           <form method="post" action="checkout3.php" class="form1">
             <h2>Checkout</h2>
             <ul class="nav nav-pills nav-justified">
-              <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
+              <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Alamat</a>
               </li>
-              <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
+              <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Metode Pengiriman</a>
               </li>
-              <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
+              <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Metode Pembayaran</a>
               </li>
-              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Review Pesanan</a>
               </li>
             </ul>
             <br>
@@ -100,13 +98,8 @@ update();
                 <div class="row">
 
 
-                  <div class="col-sm-6">
-                    <a class="btn btn-default" href="checkout2.php?del_id=1&&o_id=<?php orders(); ?>">Home Delivery</a>
-
-                  </div>
-                  <div class="col-sm-6">
-                    <a class="btn btn-default" href="checkout2.php?del_id=2&&o_id=<?php orders(); ?>">Pick up</a>
-
+                  <div class="col-sm-12">
+                    <a class="btn btn-default" href="checkout2.php?del_id=1&&o_id=<?php orders(); ?>">Antar Ke Rumah Anda</a>
                   </div>
                   <hr>
                 </div>
@@ -115,13 +108,12 @@ update();
               </div>
               <br>
               <br><br>
-
               <div class="box-footer">
                 <div class="pull-left">
-                  <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to Addresses</a>
+                  <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Kembali Ke Alamat</a>
                 </div>
                 <div class="pull-right">
-                  <button type="submit" class="btn btn-primary">Continue to Payment Method<i class="fa fa-chevron-right"></i>
+                  <button type="submit" class="btn btn-primary">Lanjutkan Ke Metode Pembayaran<i class="fa fa-chevron-right"></i>
                   </button>
                 </div>
               </div>
