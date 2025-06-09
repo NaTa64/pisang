@@ -22,10 +22,16 @@ update();
     background: #FFFFFF;
     max-width: 950px;
     height: 400px;
-    margin: 0 auto 5px;
+    margin: 0 auto 10px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 1000px;
+    }
   }
 </style>
 
@@ -39,7 +45,8 @@ update();
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-<!-- <a class="navbar-brand" href="#">Logo</a> -->      </div>
+        <!-- <a class="navbar-brand" href="#">Logo</a> -->
+      </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
@@ -76,7 +83,7 @@ update();
           </ul>
         </div>
 
-        <div class="col-md-9" id="checkout">
+        <div class="col-md-12" id="checkout">
 
           <form method="post" action="checkout3.php" class="form1">
             <h2>Checkout</h2>

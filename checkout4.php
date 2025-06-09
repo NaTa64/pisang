@@ -33,10 +33,16 @@ update();
         background: #FFFFFF;
         max-width: 270px;
         height: 400px;
-        margin: 0 auto 5px;
+        margin: 0 auto 10px;
         padding: 15px;
         text-align: center;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1000px;
+        }
     }
 </style>
 
@@ -49,7 +55,8 @@ update();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <!-- <a class="navbar-brand" href="#">Logo</a> -->            </div>
+                <!-- <a class="navbar-brand" href="#">Logo</a> -->
+            </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="home.php">Home</a></li>
@@ -86,7 +93,7 @@ update();
                     </ul>
                 </div>
 
-                <div class="col-md-9" id="checkout">
+                <div class="col-md-12" id="checkout">
 
                     <form method="get" action="" class="form1" enctype="multipart/form-data">
 
@@ -170,8 +177,14 @@ update();
                                 <tfoot>
 
                                     <tr>
+                                        <th colspan="4">Ongkos Kirim</th>
+                                        <th colspan="2">Rp<?php $ongkir = 2.00;
+                                                            echo number_format((float)$ongkir, 3, '.', ''); ?></th>
+                                    </tr>
+
+                                    <tr>
                                         <th colspan="4">Total</th>
-                                        <th colspan="2">Rp<?php echo number_format((float)$final_total, 3, '.', '');  ?></th>
+                                        <th colspan="2">Rp<?php echo number_format((float)$final_total + $ongkir, 3, '.', '');  ?></th>
                                     </tr>
 
                                 </tfoot>
@@ -199,7 +212,7 @@ update();
                 </div>
                 <!-- /.col-md-9 -->
 
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Ringkasan pesanan</h3>
@@ -220,12 +233,6 @@ update();
                                                 echo number_format((float)$ongkir, 3, '.', ''); ?></th>
                                     </tr>
 
-                                    <!-- <tr>
-                                        <td>Tax</td>
-                                        <th>$<?php $tax = ($total * 6.25) / 100;
-                                                echo number_format((float)$tax, 3, '.', ''); ?></th>
-                                    </tr> -->
-
                                     <tr class="total">
                                         <td>Total</td>
                                         <th>Rp<?php $mtotal = $final_total + $ongkir;
@@ -235,7 +242,7 @@ update();
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -267,13 +274,13 @@ if (isset($_GET['od_id'])) {
             $update_stok = "UPDATE items SET stok = stok - " . $i_price['qty'] . " WHERE item_id = '" . $item_id . "'";
             $conn->query($update_stok);
 
-            // order dimasukkan
+            // Query hitung subtotal item
             $harga_query = $conn->query('SELECT harga FROM items WHERE item_id = "' . $item_id . '"');
             $harga = $harga_query->fetch(PDO::FETCH_ASSOC)['harga'];
             $qty_item = $i_price['qty'];
             $subtotal_item = $harga * $i_price['qty'];
 
-            // Query menambah orderan
+            // Query untuk menyimpan item ke tabel oder_items
             $insert_temp = 'INSERT INTO order_items (order_id, username, ip_add, item_id, qty, subtotal) 
                             SELECT o.order_id, "' . $username . '", "' . $ip . '", "' . $item_id . '", "' . $qty_item . '", "' . $subtotal_item . '" 
                             FROM orders o 
@@ -281,8 +288,7 @@ if (isset($_GET['od_id'])) {
             $conn->exec($insert_temp);
         }
 
-        // memperbarui status
-        // $update_c = "update orders set status='Sedang Diproses', aktif=1, order_amount='" . $mtotal . "', jumlah='" . $qty . "', tanggal_order=DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') where order_id='" . $or_id . "'";
+        // Query untuk mengupdate orderan sekaligus menambah orderan
         $update_c = "update orders set status='Sedang Diproses', aktif=1, total ='" . $mtotal . "', tanggal_order=DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') where order_id='" . $or_id . "'";
         $del_cart = $conn->query("delete from cart where cust_id = '" . $cust_id . "'");
         if ($conn->query($update_c) == TRUE) {

@@ -25,7 +25,7 @@ if (!isset($_SESSION['username'])) {
             background: #FFFFFF;
             max-width: 950px;
             height: auto;
-            /* margin: 0 auto 10px; */
+            margin: 0 auto 10px;
             min-height: 400px;
             min-width: 250px;
             padding: 15px;
@@ -45,6 +45,12 @@ if (!isset($_SESSION['username'])) {
             padding: 15px;
             text-align: center;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1000px;
+            }
         }
     </style>
 
@@ -98,13 +104,12 @@ if (!isset($_SESSION['username'])) {
 
                         <div class="col-md-12">
                             <ul class="breadcrumb">
-                                <li><a href="#">Home</a>
-                                </li>
+                                <li><a href="#">Home</a></li>
                                 <li>Keranjang</li>
                             </ul>
                         </div>
 
-                        <div class="col-md-9" id="basket">
+                        <div class="col-md-12">
 
                             <form method="post" action="cart.php" class="form1">
 
@@ -190,10 +195,16 @@ if (!isset($_SESSION['username'])) {
                                                             ?>
                                                         </td>
 
-                                                        <td style="width:50px"><input type="text" value="<?php echo $qty; ?>" name="qty" class="form-control" disabled></td>
+                                                        <td style="width:50px">
+                                                            <input type="text" value="<?php echo $qty; ?>" name="qty" class="form-control" disabled>
+                                                        </td>
 
-                                                        <td align="left"><a href="cart.php?update_id=<?php echo $itm_id; ?>&dow_qty=<?php $qty2 = $qty - 1;
-                                                                                                                                    echo $qty2; ?>"><i class="glyphicon glyphicon-minus"></i></a></td>
+                                                        <td align="left">
+                                                            <a href="cart.php?update_id=<?php echo $itm_id; ?>&dow_qty=<?php $qty2 = $qty - 1;
+                                                                                                                        echo $qty2; ?>">
+                                                                <i class="glyphicon glyphicon-minus"></i>
+                                                            </a>
+                                                        </td>
 
                                                         <td>Rp<?php echo $single_price;  ?></td>
 
@@ -218,8 +229,14 @@ if (!isset($_SESSION['username'])) {
                                         <tfoot>
 
                                             <tr>
-                                                <th colspan="6">Total</th>
-                                                <th colspan="4">Rp<?php echo number_format((float)$final_total, 3, '.', '');  ?></th>
+                                                <th colspan="6">Ongkos Kirim</th>
+                                                <th colspan="4">Rp<?php $ongkir = 2.00;
+                                                                    echo number_format((float)$ongkir, 3, '.', ''); ?></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th colspan="6">Total Akhir</th>
+                                                <th colspan="4">Rp<?php echo number_format((float)$final_total + $ongkir, 3, '.', '');  ?></th>
                                             </tr>
 
                                         </tfoot>
@@ -230,7 +247,13 @@ if (!isset($_SESSION['username'])) {
 
 
                                     <div class="pull-left">
-                                        <a href="menu.php" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Lanjut Tambahkan Menu</a>
+                                        <a href="menu.php" class="btn btn-success"><i class="fa fa-chevron-left"></i> Lanjut Tambahkan Menu</a>
+                                    </div>
+
+                                    <div class="pull-right">
+                                        <a href="checkout1.php" class="btn btn-primary btn_block">
+                                            <i class="fa fa-chevron-left"></i>Proses Untuk checkout
+                                        </a>
                                     </div>
 
                                 </div>
@@ -242,7 +265,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <!-- /.col-md-9 -->
 
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                             <div class="box" id="order-summary">
                                 <div class="box-header">
                                     <h3>Ringkasan pesanan</h3>
@@ -278,7 +301,7 @@ if (!isset($_SESSION['username'])) {
 
                             </div>
 
-                        </div>
+                        </div> -->
                         <!-- /.col-md-3 -->
 
                     </div>

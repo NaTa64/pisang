@@ -22,7 +22,7 @@ update();
         background: #FFFFFF;
         max-width: 950px;
         height: 400px;
-        margin: 0 auto 5px;
+        margin: 0 auto 10px;
         padding: 15px;
         text-align: center;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -39,6 +39,12 @@ update();
         text-align: center;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1000px;
+        }
+    }
 </style>
 
 <body>
@@ -51,7 +57,8 @@ update();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <!-- <a class="navbar-brand" href="#">Logo</a> -->            </div>
+                <!-- <a class="navbar-brand" href="#">Logo</a> -->
+            </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="home.php">Home</a></li>
@@ -88,7 +95,7 @@ update();
                     </ul>
                 </div>
 
-                <div class="col-md-9" id="checkout">
+                <div class="col-md-12" id="checkout">
 
                     <form method="post" action="" class="form1" enctype="multipart/form-data">
                         <h2>Checkout</h2>
@@ -129,11 +136,6 @@ update();
 
                                 <!-- /.row -->
                                 <div class="row">
-                                    <!-- <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" name="email_address" class="form-control" id="email" placeholder="Email Address" required>
-                                        </div>
-                                    </div> -->
 
                                     <div class="col-sm-12   ">
                                         <div class="form-group">
@@ -146,26 +148,6 @@ update();
                                             <input type="text" class="form-control" name="phone" id="phone" placeholder="No Handphone" required>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="zip" class="form-control" id="zip" placeholder="Zip" required>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="state" class="form-control" id="state" placeholder="State" required>
-                                        </div>
-                                    </div> -->
-
-                                    <!-- <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <input type="text" name="country" class="form-control" id="country" placeholder="Country" required>
-                                        </div>
-                                    </div> -->
-
-
 
                                 </div>
                                 <!-- /.row -->
@@ -204,7 +186,7 @@ update();
 </html>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
     $cust_id = $_SESSION['cust_id'];
     $ip = getIp();
     $name = $_POST['name'];
