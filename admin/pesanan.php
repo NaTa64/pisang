@@ -170,6 +170,7 @@ if (!isset($_SESSION['idadmin'])) {
             <th>Jumlah</th>
             <th>Total</th>
             <th>Status</th>
+            <th>Estimasi</th>
             <th>Tanggal_Order</th>
             <th>Opsi</th>
           </tr>
@@ -185,6 +186,7 @@ if (!isset($_SESSION['idadmin'])) {
         orders.phone,
         orders.status,
         orders.tanggal_order,
+        orders.estimasi,
         GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk,
         GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
         from orders
@@ -242,6 +244,8 @@ if (!isset($_SESSION['idadmin'])) {
               <td><?php echo 'Rp' . $total_produk; ?></td>
 
               <td><?php echo $lihat['status']; ?></td>
+
+              <td><?php echo $lihat['estimasi']; ?></td>
 
               <td><?php echo $lihat['tanggal_order']; ?></td>
 

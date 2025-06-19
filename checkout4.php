@@ -257,8 +257,8 @@ if (isset($_GET['od_id'])) {
             $conn->exec($insert_temp);
         }
 
-        // Query untuk mengupdate orderan sekaligus menambah orderan
-        $update_c = "update orders set status='Sedang Diproses', aktif=1, total ='" . ($final_total + $ongkir) . "', tanggal_order=DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') where order_id='" . $or_id . "'";
+        // Query untAuk mengupdate orderan sekaligus menambah orderan
+        $update_c = "update orders set status='Sedang Diproses', aktif=1, total ='" . ($final_total + $ongkir) . "', tanggal_order=DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s'), estimasi = '10 menit' where order_id='" . $or_id . "'";
         $del_cart = $conn->query("delete from cart where cust_id = '" . $cust_id . "'");
         if ($conn->query($update_c) == TRUE) {
             echo "<script>window.open('ordersucces.php?cancel_id=1','_self')</script>";

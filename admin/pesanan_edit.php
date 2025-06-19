@@ -23,6 +23,7 @@ $query = $conn->query("SELECT
         orders.alamat,
         orders.phone,
         orders.status,
+        orders.estimasi,
         orders.tanggal_order,
         GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk,
         GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
@@ -132,16 +133,6 @@ if (!$result) {
                                     <input type="text" disabled value="<?php echo $result['name']; ?>" name="name" class="form-control mt-2">
                                 </div>
 
-                                <!-- <div class="form-group mt-3">
-                                    <label>Alamat :</label>
-                                    <input type="text" disabled value="<?php echo $result['alamat']; ?>" name="alamat" class="form-control mt-2">
-                                </div>
-
-                                <div class="form-group mt-3">
-                                    <label>No HP :</label>
-                                    <input type="text" disabled value="<?php echo $result['phone']; ?>" name="phone" class="form-control mt-2">
-                                </div> -->
-
                                 <div class="form-group mt-3">
                                     <label>Produk :</label>
                                     <ul>
@@ -159,6 +150,11 @@ if (!$result) {
                                 <div class="form-group mt-3">
                                     <label>Total :</label>
                                     <input type="text" disabled value="<?php echo $result['total']; ?>" name="total" class="form-control mt-2">
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>Estimasi Pesanan :</label>
+                                    <input type="text" value="<?php echo $result['estimasi']; ?>" name="estimasi" class="form-control mt-2">
                                 </div>
 
                                 <?php

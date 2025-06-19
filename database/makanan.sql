@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2025 at 06:57 AM
+-- Generation Time: Jun 19, 2025 at 05:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -97,7 +97,7 @@ CREATE TABLE `items` (
 
 INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_keywords`, `aktif`) VALUES
 (1, 'Pisang Keju', 10, 10.000, 'Pictures/1.jpg', 'fachri', 1),
-(2, 'Pisang Gapit', 9, 10.000, 'Pictures/2.jpg', NULL, 1),
+(2, 'Pisang Gapit', 7, 10.000, 'Pictures/2.jpg', NULL, 1),
 (3, 'Pisang Keju', 9, 14.000, 'Pictures/3.jpg', NULL, 1),
 (4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
 (5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 0),
@@ -129,6 +129,7 @@ CREATE TABLE `orders` (
   `status` varchar(20) NOT NULL,
   `tanggal_order` datetime DEFAULT NULL,
   `tanggal_selesai` datetime DEFAULT NULL,
+  `estimasi` varchar(50) DEFAULT NULL,
   `aktif` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -136,10 +137,8 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `aktif`) VALUES
-(1, 2, '::1', NULL, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Dibatalkan', NULL, NULL, 0),
-(2, 2, '::1', NULL, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', '', '', 'Dibatalkan', NULL, NULL, 0),
-(4, 2, '::1', 16.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diproses', '2025-06-16 14:49:34', NULL, 1);
+INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `estimasi`, `aktif`) VALUES
+(1, 2, '::1', 16.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diproses', '2025-06-19 23:44:49', NULL, '12 menit', 1);
 
 -- --------------------------------------------------------
 
@@ -161,7 +160,7 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `username`, `ip_add`, `item_id`, `qty`, `subtotal`) VALUES
-(4, 'fachri', '::1', 3, 1, 14.000);
+(1, 'fachri', '::1', 3, 1, 14.000);
 
 --
 -- Indexes for dumped tables
@@ -230,7 +229,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
