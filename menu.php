@@ -26,6 +26,19 @@ require("koneksi/koneksi.php"); // Including the db Connection
     })
   </script>
 
+  <style>
+    .panel-primary {
+      border-color: linear-gradient(to right, #007bff, #5c9fff);
+    }
+
+    .panel-primary>.panel-heading {
+      /* background-color:rgb(251, 113, 0); */
+      background: linear-gradient(to right, #007bff, #5c9fff);
+
+      border-color: linear-gradient(to right, #007bff, #5c9fff);
+    }
+  </style>
+
 </head>
 
 <body>
@@ -106,7 +119,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
       <?php } ?>
     </div>
 
-    <a href="https://wa.me/+6289521598295?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
+    <a href="https://wa.me/+6289657172345?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
       <img src="Pictures/whatsapp.webp" alt="Logo WhatsApp">
     </a>
 

@@ -74,9 +74,9 @@ if (!isset($_SESSION['idadmin'])) {
   <div class="sidebar">
     <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a href="produk.php"><i class="fas fa-box"></i> Produk</a>
-    <a href="peminjam.php"><i class="fas fa-users"></i> Anggota</a>
-    <a href="peminjaman.php"><i class="fas fa-clipboard"></i> Peminjaman</a>
-    <a href="pengembalian.php"><i class="fas fa-undo"></i> Pengembalian</a>
+    <a href="pelanggan.php"><i class="fas fa-users"></i> Pelanggan</a>
+    <a href="pesanan.php"><i class="fas fa-clipboard"></i> Pesanan</a>
+    <a href="riwayatpemesanan.php"><i class="fas fa-undo"></i> Riwayat Pemesanan</a>
   </div>
 
   <!-- content -->

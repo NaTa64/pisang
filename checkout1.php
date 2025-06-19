@@ -112,19 +112,8 @@ update();
                         <br>
                         <div class="table">
                             <div class="content">
+                                
                                 <div class="row">
-                                    <!-- <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="first_name" id="firstname" placeholder="First Name" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="last_name" id="lastname" placeholder="Last Name" required>
-                                        </div>
-                                    </div> -->
-
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="name" id="name" placeholder="Nama" required>

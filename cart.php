@@ -1,8 +1,10 @@
 <?php
 session_start();
 require("koneksi/koneksi.php"); // Including the db Connection	
+
 remove();
 update();
+
 if (!isset($_SESSION['username'])) {
     echo "<script>window.open('login.php','_self')</script>";
 } else {
@@ -263,46 +265,6 @@ if (!isset($_SESSION['username'])) {
                             <!-- /.box -->
 
                         </div>
-                        <!-- /.col-md-9 -->
-
-                        <!-- <div class="col-md-3">
-                            <div class="box" id="order-summary">
-                                <div class="box-header">
-                                    <h3>Ringkasan pesanan</h3>
-                                </div>
-                                <p class="text-muted">Biaya pengiriman dan biaya tambahan mungkin berlaku.</p>
-
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td>Order subtotal</td>
-                                                <th>Rp<?php echo number_format((float)$final_total, 3, '.', ''); ?></th>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Ongkos Kirim</td>
-                                                <th>Rp<?php $ongkir = 2.00;
-                                                        echo number_format((float)$ongkir, 3, '.', ''); ?></th>
-                                            </tr>
-
-                                            <tr class="total">
-                                                <td>Total</td>
-                                                <th>Rp<?php $mtotal = $final_total + $ongkir;
-                                                        echo number_format((float)$mtotal, 3, '.', ''); ?></th>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <br>
-                                    <a href="checkout1.php"><i class="fa fa-chevron-left"></i><button class="btn btn-primary btn_block"> Proses Untuk Checkout</button></a>
-
-
-                                </div>
-
-                            </div>
-
-                        </div> -->
-                        <!-- /.col-md-3 -->
 
                     </div>
                     <!-- /.container -->

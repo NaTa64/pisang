@@ -189,13 +189,6 @@ if (!isset($_SESSION['username'])) {
                                 <?php } ?>
                             </td>
 
-                            <!-- <td>
-                <div class="btn-group">
-                  <a href="pesanan_edit.php?order_id=<?php echo $lihat['order_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
-                  <a href="hapuspeminjaman.php?id=<?php echo $lihat['order_id']; ?>" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
-                </div>
-              </td> -->
-
                         </tr>
                         <?php $no++; ?>
                     <?php

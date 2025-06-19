@@ -27,7 +27,8 @@ if (!isset($_SESSION['username'])) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-  <!-- <a class="navbar-brand" href="#">Logo</a> -->        </div>
+        </div>
+        
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="home.php">Home</a></li>
@@ -36,22 +37,22 @@ if (!isset($_SESSION['username'])) {
           </ul>
           <ul>
             <ul class="nav navbar-nav navbar-right">
-            <li style="top:7px;">
-              <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
-                <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary" name="search" type="submit">Search</button>
-              </form>
-            </li>
-            <li><?php
-                if (!isset($_SESSION['username'])) {
+              <li style="top:7px;">
+                <form class="form-inline my-2 my-lg-0" method="get" action="results.php" enctype="multipart/form-data">
+                  <input class="form-control" type="search" name="user_query" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-primary" name="search" type="submit">Search</button>
+                </form>
+              </li>
+              <li><?php
+                  if (!isset($_SESSION['username'])) {
 
-                  echo "<a href='login.php'><span class='glyphicon glyphicon-user'></span> Login</a>";
-                } else {
-                  echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
-                }
-                ?></li>
-            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
-          </ul>
+                    echo "<a href='login.php'><span class='glyphicon glyphicon-user'></span> Login</a>";
+                  } else {
+                    echo "<a href='logout.php'><span class='glyphicon glyphicon-user'></span> Logout</a>";
+                  }
+                  ?></li>
+              <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</a></li>
+            </ul>
         </div>
       </div>
     </nav>

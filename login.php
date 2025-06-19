@@ -27,7 +27,8 @@ require("koneksi/koneksi.php"); // Including the db Connection
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-<!-- <a class="navbar-brand" href="#">Logo</a> -->      </div>
+      </div>
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
@@ -54,11 +55,6 @@ require("koneksi/koneksi.php"); // Including the db Connection
       <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
 
       <hr class="colorgraph">
-      <!-- <div class="checkbox">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div> -->
 
       <button class="btn btn-primary btn-block" type="submit">Login</button>
       <p class="h4">Belum punya akun? <a href="register.php">Buat Akun</a></p>
