@@ -164,6 +164,7 @@ if (!isset($_SESSION['idadmin'])) {
           <tr>
             <th>No</th>
             <th>Nama Pelanggan</th>
+            <th>Kode Pelanggan</th>
             <th>Alamat</th>
             <th>No HP</th>
             <th>Produk</th>
@@ -180,6 +181,7 @@ if (!isset($_SESSION['idadmin'])) {
 
         $query = "SELECT 
         orders.order_id,
+        orders.cust_id,
         orders.total,
         orders.name,
         orders.alamat,
@@ -209,6 +211,8 @@ if (!isset($_SESSION['idadmin'])) {
               <td><?php echo $no; ?></td>
 
               <td><?php echo $lihat['name']; ?></td>
+
+              <td><?php echo $lihat['cust_id']; ?></td>
 
               <td><?php echo $lihat['alamat']; ?></td>
 

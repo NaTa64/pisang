@@ -257,6 +257,7 @@ if (isset($_GET['od_id'])) {
             $conn->exec($insert_temp);
         }
 
+        $mtotal=0;
         // Query untuk mengupdate orderan sekaligus menambah orderan
         $update_c = "update orders set status='Sedang Diproses', aktif=1, total ='" . $mtotal . "', tanggal_order=DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') where order_id='" . $or_id . "'";
         $del_cart = $conn->query("delete from cart where cust_id = '" . $cust_id . "'");
