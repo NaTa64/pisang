@@ -6,7 +6,33 @@ if (!isset($_SESSION['idadmin'])) {
   header('location:login.php');
 }
 
+$period = $_GET['period'] ?? 'daily';
+$date = $_GET['date'] ?? date('Y-m-d');
 
+if ($period == 'daily') {
+  $where = "WHERE DATE(orders.tanggal_order) = '" . $date . "'";
+} else {
+  $month = date('Y-m', strtotime($date));
+  $where = "WHERE DATE_FORMAT(orders.tanggal_order, '%Y-%m') = '" . $month . "'";
+}
+
+$query = "SELECT 
+    orders.order_id,
+    orders.cust_id,
+    orders.total,
+    orders.name,
+    orders.alamat,
+    orders.phone,
+    orders.status,
+    orders.tanggal_order,
+    orders.tanggal_selesai,
+    GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk,
+    GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
+    from orders
+    JOIN order_items ON orders.order_id = order_items.order_id
+    JOIN items ON order_items.item_id = items.item_id
+    $where
+    GROUP BY orders.order_id";
 ?>
 
 <!DOCTYPE html>
@@ -155,9 +181,61 @@ if (!isset($_SESSION['idadmin'])) {
       <h2 class="page-header">Riwayat Pemesanan</h2>
       <hr>
 
-      <!-- <div class="row-search">
-        <a href="tambahpeminjaman.php" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Peminjaman</a>
-      </div> -->
+      <!-- Form Filter dan Ekspor -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <form method="get" action="">
+            <div class="form-row">
+              
+              <div class="col">
+                <select name="period" class="form-control">
+                  <option value="daily" <?= (isset($_GET['period']) && $_GET['period'] == 'daily') ? 'selected' : '' ?>>Harian</option>
+                  <option value="monthly" <?= (isset($_GET['period']) && $_GET['period'] == 'monthly') ? 'selected' : '' ?>>Bulanan</option>
+                </select>
+              </div>
+
+              <div class="col mt-1">
+                <input type="date" name="date" class="form-control" value="<?= isset($_GET['date']) ? $_GET['date'] : date('Y-m-d') ?>">
+              </div>
+
+              <div class="col mt-2">
+                <button type="submit" class="btn btn-primary">Filter</button>
+
+                <a href="riwayatpemesanan.php" class="btn btn-danger">Reset</a>
+                
+                <a href="export_excel.php?period=<?= isset($_GET['period']) ? $_GET['period'] : 'daily' ?>&date=<?= isset($_GET['date']) ? $_GET['date'] : date('Y-m-d') ?>" class="btn btn-success m-lg-2">
+                  <i class="fas fa-file-excel"></i> Export to Excel
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="col-md-6 text-right">
+        </div> -->
+      </div>
+      <!--END Form Filter dan Ekspor -->
+
+      <?php
+
+      // Query untuk ringkasan statistik
+      $summaryQuery = "SELECT 
+    SUM(orders.total) as total_pendapatan,
+    (SELECT SUM(qty) FROM order_items WHERE order_id IN 
+        (SELECT order_id FROM orders $where and status='Telah Selesai')
+    ) as total_items
+FROM orders
+$where and status='Telah Selesai'";
+
+      $summaryStmt = $conn->query($summaryQuery);
+      $summary = $summaryStmt->fetch(PDO::FETCH_ASSOC);
+
+      // Tampilkan ringkasan
+      echo '<div class="alert alert-info">';
+      echo '<h4>Ringkasan:</h4>';
+      echo '<p>Total Item Terjual: ' . $summary['total_items'] . '</p>';
+      echo '<p>Total Pendapatan: Rp' . number_format($summary['total_pendapatan'], 3, '.', '.') . '</p>';
+      echo '</div>';
+      ?>
 
       <table id="tabelpesanan" class="table table-bordered table-hover">
         <thead>
@@ -179,23 +257,6 @@ if (!isset($_SESSION['idadmin'])) {
 
         <?php
 
-        $query = "SELECT 
-        orders.order_id,
-        orders.cust_id,
-        orders.total,
-        orders.name,
-        orders.alamat,
-        orders.phone,
-        orders.status,
-        orders.tanggal_order,
-        orders.tanggal_selesai,
-        GROUP_CONCAT(items.item_name SEPARATOR ', ') AS produk,
-        GROUP_CONCAT(order_items.qty SEPARATOR ', ') AS jumlah
-        from orders
-        JOIN order_items ON orders.order_id = order_items.order_id
-        JOIN items ON order_items.item_id = items.item_id
-        GROUP BY orders.order_id";
-
         $result = $conn->query($query);
         $no = 1;
         while ($lihat = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -215,10 +276,6 @@ if (!isset($_SESSION['idadmin'])) {
               <td><?php echo $lihat['cust_id']; ?></td>
 
               <td><?php echo $lihat['alamat']; ?></td>
-
-              <!-- <td><a href="https://wa.me/<?php echo $lihat['phone']; ?>" target="_blank">
-                  <?php echo $lihat['phone']; ?>
-              </td> -->
 
               <td><?php echo $lihat['phone']; ?></td>
 
