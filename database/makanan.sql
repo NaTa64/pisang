@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2025 at 05:50 PM
+-- Generation Time: Jun 20, 2025 at 10:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,7 +73,9 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`cust_id`, `cust_ip`, `cust_dname`, `username`, `cust_pass`) VALUES
 (1, '::1', 'Rengga', 'rengga', '123'),
-(2, '::1', 'fachri', 'fachri', '1');
+(2, '::1', 'fachri', 'fachri', '1'),
+(3, '::1', 'Raihan', 'raihan_64', 'Raihna'),
+(4, '::1', 'Raihan', 'raihan64', 'raihan');
 
 -- --------------------------------------------------------
 
@@ -87,7 +89,7 @@ CREATE TABLE `items` (
   `stok` int(11) NOT NULL,
   `harga` decimal(6,3) NOT NULL,
   `item_image` varchar(100) DEFAULT NULL,
-  `item_keywords` text DEFAULT NULL,
+  `item_desc` text DEFAULT NULL,
   `aktif` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -95,10 +97,10 @@ CREATE TABLE `items` (
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_keywords`, `aktif`) VALUES
-(1, 'Pisang Keju', 10, 10.000, 'Pictures/1.jpg', 'fachri', 1),
-(2, 'Pisang Gapit', 7, 10.000, 'Pictures/2.jpg', NULL, 1),
-(3, 'Pisang Keju', 9, 14.000, 'Pictures/3.jpg', NULL, 1),
+INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_desc`, `aktif`) VALUES
+(1, 'Bubur Singkong', 10, 10.000, 'Pictures/1.jpg', 'fachri', 1),
+(2, 'Pisang Gapit', 5, 10.000, 'Pictures/2.jpg', NULL, 1),
+(3, 'Pisang Keju', 7, 14.000, 'Pictures/3.jpg', NULL, 1),
 (4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
 (5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 0),
 (6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', NULL, 0),
@@ -108,7 +110,8 @@ INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `ite
 (10, 'a', 8, 11.011, 'Pictures/10.jpg', NULL, 0),
 (11, 'Ayam', 10, 200.000, 'Pictures/20230417_185527.jpeg', NULL, 0),
 (12, 'sapi', 1, 100.000, 'Pictures/Figure_1.png', NULL, 0),
-(13, 'bayi muffin', 80, 10.000, 'Pictures/Jake_Portrait_Render.webp', NULL, 0);
+(13, 'bayi muffin', 80, 10.000, 'Pictures/Jake_Portrait_Render.webp', NULL, 0),
+(14, 'Ayam', 50, 7.000, 'Pictures/14.jpg', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +141,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `estimasi`, `aktif`) VALUES
-(1, 2, '::1', 16.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diproses', '2025-06-19 23:44:49', NULL, '12 menit', 1);
+(1, 2, '::1', 16.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diproses', '2025-06-19 23:44:49', NULL, '12 menit', 1),
+(2, 4, '::1', 50.000, 'Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-06-20 14:03:36', '2025-06-20 14:08:17', '20 Menit', 0);
 
 -- --------------------------------------------------------
 
@@ -160,7 +164,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `username`, `ip_add`, `item_id`, `qty`, `subtotal`) VALUES
-(1, 'fachri', '::1', 3, 1, 14.000);
+(1, 'fachri', '::1', 3, 1, 14.000),
+(2, 'raihan64', '::1', 3, 2, 28.000),
+(2, 'raihan64', '::1', 2, 2, 20.000);
 
 --
 -- Indexes for dumped tables
@@ -217,19 +223,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
