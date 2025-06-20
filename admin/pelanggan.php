@@ -150,7 +150,7 @@ if (!isset($_SESSION['idadmin'])) {
           <tbody>
             <tr>
               <td width="5%"><?php echo $nomor; ?></td>
-              <td><?php echo htmlspecialchars($lihat['cust_dname']); ?></td>
+              <td><?php echo htmlspecialchars($lihat['username']); ?></td>
               <td><?php echo htmlspecialchars($lihat['cust_id']); ?></td>
               <!-- <td>
                 <!-- Membuat nomor HP menjadi link WhatsApp dengan pesan otomatis -->
