@@ -160,10 +160,6 @@ update();
 
 
                 </div>
-                <!-- /.col-md-9 -->
-
-
-                <!-- /.col-md-3 -->
 
             </div>
             <!-- /.container -->
