@@ -173,7 +173,7 @@ if (!isset($_SESSION['idadmin'])) {
             <th>Status</th>
             <th>Tanggal_Order</th>
             <th>Tanggal_Selesai</th>
-            <!-- <th>Opsi</th> -->
+            <th>Nota</th>
           </tr>
         </thead>
 
@@ -221,7 +221,7 @@ if (!isset($_SESSION['idadmin'])) {
               </td> -->
 
               <td><?php echo $lihat['phone']; ?></td>
-              
+
               <!-- menampilkan produk yang dibeli -->
               <!-- <td>
                 <?php foreach ($produk as $value) {
@@ -260,6 +260,12 @@ if (!isset($_SESSION['idadmin'])) {
                 <?php } else { ?>
                   <?php echo $lihat['tanggal_selesai']; ?>
                 <?php } ?>
+              </td>
+
+              <td>
+                <a href="cetak_nota.php?order_id=<?php echo $lihat['order_id']; ?>" class="btn btn-info" target="_blank">
+                  <i class="fas fa-print"></i> Cetak Nota
+                </a>
               </td>
 
               <!-- <td>
