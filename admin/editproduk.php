@@ -138,6 +138,12 @@ include "../koneksi/koneksi.php" ?>
                   </div>
 
                   <div class="form-group mt-3">
+                    <label>Deskripsi Produk :</label>
+                    <input type="text" value="<?php echo $edit['item_desc'] ?>" name="item_desc"
+                      class="form-control mt-2" placeholder="" required>
+                  </div>
+
+                  <div class="form-group mt-3">
                     <label>Harga Produk : Rp<?php echo $edit['harga'] ?></label>
                     <input type="text" value="<?php echo $edit['harga'] ?>" name="harga"
                       class="form-control mt-2" placeholder="" required>

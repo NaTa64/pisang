@@ -41,9 +41,9 @@ if (isset($_FILES['gambar']) && $_FILES['gambar']['size'] > 0) {
 $nama_produk = $_POST['item_name'];
 $harga_produk = $_POST['harga'];
 $stok_produk = $_POST['stok'];
+$deskripsi = $_POST['item_desc'];
 
-
-$ubah = "update items set item_id=$id_produk, item_name='$nama_produk', harga='$harga_produk', stok=$stok_produk where item_id='$id_produk'";
+$ubah = "update items set item_id=$id_produk, item_name='$nama_produk', harga='$harga_produk', stok=$stok_produk, item_desc='$deskripsi' where item_id='$id_produk'";
 $update = $conn->query($ubah);
 
 if ($update) {

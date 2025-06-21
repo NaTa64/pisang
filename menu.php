@@ -37,6 +37,21 @@ require("koneksi/koneksi.php"); // Including the db Connection
 
       border-color: linear-gradient(to right, #007bff, #5c9fff);
     }
+
+    .deskripsi-makanan {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ddd;
+      width: 100%;
+    }
+
+    .panel-body:hover .deskripsi-makanan {
+      display: block;
+    }
   </style>
 
 </head>
@@ -93,14 +108,31 @@ require("koneksi/koneksi.php"); // Including the db Connection
   <div class="container">
     <div class="row">
       <?php
-      $stmt = $conn->query('select item_id,item_name,harga,stok,item_image from items where aktif=1');
+      $stmt = $conn->query('select item_id,item_name,harga,stok,item_image,item_desc from items where aktif=1');
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       ?>
         <div class="col-sm-4">
           <div class="panel panel-primary" style="border-radius:10px 10px 10px 10px;">
+
             <div class="panel-heading" align="center" style="border-radius:7px 7px 0px 0px;"><b style="font-size:17px;"><?php echo $row['item_name']; ?></b></div>
-            <div class="panel-body" align="center" style="height:250px; width:auto; "><?php echo '<img src="' . $row['item_image'] . '"  alt="Image">' ?></div>
+
+            <div class="panel-body" align="center" style="height:250px; width:auto; ">
+              <img src="<?php echo $row['item_image']; ?>" alt="Image" class="img-responsive">
+              <div class="deskripsi-makanan">
+                <p><?php echo $row['item_desc']; ?></p>
+              </div>
+
+              <script>
+                $(document).ready(function() {
+                  $('.img-responsive').on('click', function() {
+                    $(this).next('.deskripsi-makanan').toggle();
+                  });
+                });
+              </script>
+            </div>
+
             <div class="panel-footer" align="center"><b style="font-size:15px;">Harga : Rp<?php echo $row['harga']; ?></b></div>
+
             <div class="panel-footer" align="center">
               <b style="font-size:15px;">Stok : <?php echo $row['stok']; ?></b>
             </div>
@@ -114,6 +146,7 @@ require("koneksi/koneksi.php"); // Including the db Connection
             <?php } else { ?>
               <button class="btn btn-light btn-lg btn-block" disabled style="color: red;">Stok habis. Silakan cek kembali nanti.</button>
             <?php } ?>
+
           </div>
         </div>
       <?php } ?>
