@@ -1,78 +1,95 @@
 <?php
 require("koneksi/koneksi.php");
-
 ?>
 <html lang="en">
 
 <head>
   <title>WARUNG ZAYN</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <style>
     body,
     html {
       width: 100%;
-      height: 100%
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
 
     .masthead {
-      min-height: 30rem;
+      min-height: 100vh;
       position: relative;
       display: table;
       width: 100%;
-      height: auto;
-      padding-top: 8rem;
-      padding-bottom: 8rem;
-      background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(Banner/pisang.jpg);
+      background: url(Banner/pisang.jpg);
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: cover
+      background-size: cover;
+      text-align: center;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
     }
 
-    .masthead h1 {
-      font-size: 4rem;
-      margin: 0;
-      padding: 0
+    .border {
+      background-image: url(Pictures/home.jpg);
+      background-size: auto;
+      background-color: white;
+      border: white;
+      border-radius: 40px;
+      padding: 45px;
+      margin-left: 500px;
+      margin-top: 115px;
+      max-width: 600px;
+      color: white;
+    }
+
+    .border h1,
+    .border h2 {
+      color: white;
+      background-color: white;
+      color: black;
+      padding: 5px;
+      border-radius: 5px;
+      font-family: fantasy;
+    }
+
+    .border .btn {
+      margin-top: 5px;
     }
 
     @media (min-width: 992px) {
       .masthead {
-        height: 100vh
+        height: 100vh;
       }
 
-      .masthead h1 {
-        font-size: 5.5rem
+      .border h1 {
+        font-size: 5.5rem;
       }
-    }
 
-    .map {
-      height: 60rem
+      .border h2 {
+        color: blueviolet;
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <header class="masthead d-flex">
-    <div class="container text-center" style="padding:200;">
+    <div class="container border">
       <h1 class="mb-1">WARUNG ZAYN</h1>
-      <h3 class="mb-5">
-        AYO PESAN MAKANANMU SEKARANG !!
-      </h3>
-      <a class="btn btn-primary " href="menu.php">Pergi ke Menu</a>
-
+      <h2 class="mb-5">AYO PESAN MAKANANMU SEKARANG !!</h2>
+      <a class="btn btn-primary" href="menu.php">Pergi ke Menu</a>
     </div>
-    <div class="overlay"></div>
   </header>
-  <!-- <div style="width:100%; height:35%; background-color:steelblue;"> -->
-  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
