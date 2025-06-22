@@ -39,11 +39,17 @@ require("koneksi/koneksi.php"); // Including the db Connection
     }
 
     .deskripsi-makanan {
+      color: white;
       display: none;
+      text-align: justify;
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #fff;
+      background: linear-gradient(to right, #007bff, #5c9fff);
+      border-color: linear-gradient(to right, #007bff, #5c9fff);
+      border-radius: 8px;
+      margin: 1px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
       padding: 10px;
       border: 1px solid #ddd;
       width: 100%;

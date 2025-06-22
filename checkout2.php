@@ -94,7 +94,7 @@ update();
               </li>
               <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Metode Pembayaran</a>
               </li>
-              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Review Pesanan</a>
+              <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Ringkasan Pesanan</a>
               </li>
             </ul>
             <br>
