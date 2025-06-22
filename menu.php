@@ -152,9 +152,9 @@ require("koneksi/koneksi.php"); // Including the db Connection
       <?php } ?>
     </div>
 
-    <a href="https://wa.me/+6289657172345?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
+    <!-- <a href="https://wa.me/+6289657172345?text=Halo%20saya%20ingin%20bertanya%20tentang%20produk%20Anda" class="whatsapp-button" target="_blank">
       <img src="Pictures/whatsapp.webp" alt="Logo WhatsApp">
-    </a>
+    </a> -->
 
 </body>
 
