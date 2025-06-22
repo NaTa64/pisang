@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2025 at 10:20 AM
+-- Generation Time: Jun 22, 2025 at 05:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,6 +53,13 @@ CREATE TABLE `cart` (
   `qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cust_id`, `i_id`, `ip_add`, `qty`) VALUES
+(2, 2, '::1', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -98,10 +105,10 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `item_desc`, `aktif`) VALUES
-(1, 'Bubur Singkong', 10, 10.000, 'Pictures/1.jpg', 'fachri', 1),
-(2, 'Pisang Gapit', 5, 10.000, 'Pictures/2.jpg', NULL, 1),
-(3, 'Pisang Keju', 7, 14.000, 'Pictures/3.jpg', NULL, 1),
-(4, 'Bubur Kacang Hijau', 10, 10.000, 'Pictures/4.jpg', NULL, 1),
+(1, 'Bubur Singkong', 9, 10.000, 'Pictures/1.jpg', 'bubur singkong mengandung protein', 1),
+(2, 'Pisang Gapit', 0, 10.000, 'Pictures/2.jpg', NULL, 1),
+(3, 'Pisang Keju', 5, 14.000, 'Pictures/3.jpg', NULL, 1),
+(4, 'Bubur Kacang Hijau', 9, 10.000, 'Pictures/4.jpg', NULL, 1),
 (5, 'Item permanen', 3, 10.000, 'Pictures/5.jpg', NULL, 0),
 (6, 'Curly Fries', 397, 2.550, 'Pictures/6.jpg', NULL, 0),
 (7, 'Blizzard', 620, 5.240, 'Pictures/7.jpg', NULL, 0),
@@ -111,7 +118,7 @@ INSERT INTO `items` (`item_id`, `item_name`, `stok`, `harga`, `item_image`, `ite
 (11, 'Ayam', 10, 200.000, 'Pictures/20230417_185527.jpeg', NULL, 0),
 (12, 'sapi', 1, 100.000, 'Pictures/Figure_1.png', NULL, 0),
 (13, 'bayi muffin', 80, 10.000, 'Pictures/Jake_Portrait_Render.webp', NULL, 0),
-(14, 'Ayam', 50, 7.000, 'Pictures/14.jpg', NULL, 1);
+(14, 'Ayam', 50, 7.000, 'Pictures/14.jpg', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -141,8 +148,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `cust_id`, `cust_ip`, `total`, `name`, `alamat`, `phone`, `delivery_type`, `payment`, `status`, `tanggal_order`, `tanggal_selesai`, `estimasi`, `aktif`) VALUES
-(1, 2, '::1', 16.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Sedang Diproses', '2025-06-19 23:44:49', NULL, '12 menit', 1),
-(2, 4, '::1', 50.000, 'Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-06-20 14:03:36', '2025-06-20 14:08:17', '20 Menit', 0);
+(1, 2, '::1', 72.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-06-20 22:29:44', '2025-06-20 22:56:23', '10 menit', 0),
+(2, 2, '::1', 30.000, 'Muhammad Fachri', 'Jl.SoekarnoHatta Km 1', '0895700288991', 'Home Delivery', 'Cash on Delivery', 'Telah Selesai', '2025-06-20 22:31:58', '2025-06-20 22:56:25', '10 menit', 0);
 
 -- --------------------------------------------------------
 
@@ -164,9 +171,10 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `username`, `ip_add`, `item_id`, `qty`, `subtotal`) VALUES
-(1, 'fachri', '::1', 3, 1, 14.000),
-(2, 'raihan64', '::1', 3, 2, 28.000),
-(2, 'raihan64', '::1', 2, 2, 20.000);
+(1, 'fachri', '::1', 2, 5, 50.000),
+(1, 'fachri', '::1', 1, 1, 10.000),
+(1, 'fachri', '::1', 4, 1, 10.000),
+(2, 'fachri', '::1', 3, 2, 28.000);
 
 --
 -- Indexes for dumped tables
