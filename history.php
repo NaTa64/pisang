@@ -72,6 +72,7 @@ if (!isset($_SESSION['username'])) {
                     <li><a href="home.php">Home</a></li>
                     <li><a href="menu.php">Menu Makanan</a></li>
                     <li class="active"><a href="history.php">Riwayat Pemesanan</a></li>
+                    <li><a href="about.php">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><?php

@@ -47,12 +47,13 @@ update();
           <span class="icon-bar"></span>
         </button>
       </div>
-      
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><a href="home.php">Home</a></li>
           <li><a href="menu.php">Menu Makanan</a></li>
           <li><a href="history.php">Riwayat Pemesanan</a></li>
+          <li><a href="about.php">About</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li style="top:7px;">

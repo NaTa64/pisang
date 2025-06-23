@@ -64,6 +64,7 @@ update();
                     <li><a href="home.php">Home</a></li>
                     <li><a href="menu.php">Menu Makanan</a></li>
                     <li><a href="history.php">Riwayat Pemesanan</a></li>
+                    <li><a href="about.php">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li style="top:7px;">
@@ -112,7 +113,7 @@ update();
                         <br>
                         <div class="table">
                             <div class="content">
-                                
+
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="form-group">
